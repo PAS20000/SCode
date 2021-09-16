@@ -1,0 +1,14 @@
+import Link from "next/link"
+import NextImage from "../NextImage/NextImage"
+
+export default function NextImageLink({href, src, target, alt, width, height, className}) {
+    return (
+        <div>
+            <Link href={href}>
+                <a target={target}>
+                    <NextImage src={src} alt={alt} width={width} height={height} className={className} />
+                </a>
+            </Link>
+        </div>
+    )
+}
