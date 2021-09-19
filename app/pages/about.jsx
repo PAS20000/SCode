@@ -1,13 +1,15 @@
-export default function About() {
+import Navbar from "../components/NavBar/NavBar"
+
+const About = () => {
     return (
-        <>
+        <div id='Page-About'>
             <header>
-                Nav...
+               <Navbar />
             </header>
             <main>
                 <section>
-                    
-                    <h1>Sobre {'< S >'}code</h1>
+                    LOGO
+                    <h1>Sobre nós</h1>
                     <p>
                         text...
                     </p>
@@ -22,6 +24,8 @@ export default function About() {
             <footer>
                 Rodapé...
             </footer>
-        </>
+        </div>
     )
 }
+
+export default About

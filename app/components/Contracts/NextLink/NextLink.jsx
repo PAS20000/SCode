@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { LinkContainer, Ancor } from './NextLink.styles'
 
 
-export default function NextLink({text, target, href}) {
+const NextLink = ({ text, target, href }) => {
     return (
         <LinkContainer>
             <Link href={href} passHref>
@@ -13,3 +13,5 @@ export default function NextLink({text, target, href}) {
         </LinkContainer>
     )
 }
+
+export default NextLink

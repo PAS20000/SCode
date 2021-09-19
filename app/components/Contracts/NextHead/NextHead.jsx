@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function NextHead({title, keywords, description, robots}) {
+const NextHead = ({ title, keywords, description, robots }) => {
     return (
         <>
             <Head>
@@ -17,3 +17,4 @@ export default function NextHead({title, keywords, description, robots}) {
         </>
     )
 }
+export default NextHead

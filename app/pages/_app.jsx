@@ -5,7 +5,7 @@ import { dark } from '../components/assets/themes/Dark.styles'
 
 
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const [theme, setTheme] = useState(dark)
 
   return (
@@ -17,3 +17,5 @@ export default function App({ Component, pageProps }) {
     </>
   )
 }
+
+export default App

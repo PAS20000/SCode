@@ -1,31 +1,37 @@
-import LogoText from "../components/Logo/LogoText";
+import Navbar from "../components/NavBar/NavBar"
 
-export default function Home() {
+
+const Home = () => {
+  
   return (
-    <>
+    <div id='Page-Home'>
       <header>
-        Nav...
+        <Navbar />
       </header>
       <main>
-        <section>
-            <h1>
-              <LogoText />
-            </h1>
-            <p>
+          <article>
+              banners
+              <h2>
+                A importância de estar no meio Digital, para seu negócio.
+              </h2>
+              <p>
                 text...
-            </p>
-        </section>
-        <article>
-            <h2>
-              Quem já é cliente 
-              <LogoText /> ?
-            </h2>
-             NextImageLinks
-        </article>
+              </p>
+          </article>
+          <section>
+              <h1>
+                Nossos Serviços
+              </h1>
+              <p>
+                text...
+              </p>
+          </section>
       </main>
       <footer>
         Rodapé...
       </footer>
-    </>
+    </div>
   )
 }
+
+export default Home
