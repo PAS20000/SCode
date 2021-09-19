@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from '../assets/json/light.json'
+import animationData from '../../assets/json/light.json'
 
 const defaultOptions = {
     loop: true,

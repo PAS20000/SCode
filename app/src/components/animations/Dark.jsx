@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from '../assets/json/robot-error.json'
+import animationData from '../../assets/json/dark.json'
 
 const defaultOptions = {
     loop: true,
@@ -10,7 +10,7 @@ const defaultOptions = {
     }
   };
 
-const RobotError = ({ height, width, Stop }) => {
+const AnimationDark = ({ height, width, Stop }) => {
     return(
     <>
           <Lottie options={defaultOptions}
@@ -22,4 +22,4 @@ const RobotError = ({ height, width, Stop }) => {
     </>
     )
 }
-export default RobotError
+export default AnimationDark

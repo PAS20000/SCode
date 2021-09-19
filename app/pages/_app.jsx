@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from '../components/assets/themes/Global.styles'
-import { dark } from '../components/assets/themes/Dark.styles'
+import { GlobalStyle } from '../src/assets/themes/Global.styles'
+import { dark } from '../src/assets/themes/Dark.styles'
 
 
 

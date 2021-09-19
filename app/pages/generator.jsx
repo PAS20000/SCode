@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form'
-import NextImageLink from '../components/Contracts/NextImageLink/NextImageLink'
-import NextHead from '../components/Contracts/NextHead/NextHead'
-import Error from '../components/animations/RobotError'
-import LoadRobot from '../components/animations/LoadRobot'
-import Navbar from '../components/NavBar/NavBar';
+import NextImageLink from '../src/components/Contracts/NextImageLink/NextImageLink'
+import NextHead from '../src/components/Contracts/NextHead/NextHead'
+import Error from '../src/components/animations/RobotError'
+import LoadRobot from '../src/components/animations/LoadRobot'
+import Navbar from '../src/components/NavBar/NavBar';
 
 const Generator = () => {
 const { register, handleSubmit } = useForm()

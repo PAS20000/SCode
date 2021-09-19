@@ -14,7 +14,7 @@ const [show,setShow] = useState(false)
 useEffect(() => {
     const main = document.querySelector('main')
     const contato = document.querySelector('#contato')
-    
+
     const enter = () => setShow(true)
     const exit = () => setShow(false)
 
@@ -28,6 +28,7 @@ useEffect(() => {
         contato.removeEventListener('mouseleave', exit)
         main.removeEventListener('click', exit)
     }
+    
 },[])
 
     return (
