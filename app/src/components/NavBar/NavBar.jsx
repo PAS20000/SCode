@@ -4,7 +4,8 @@ import Light from '../animations/Light'
 import Dark from '../animations/Dark'
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
-
+import { setCookie } from 'nookies'
+import { Bar, Nav, ThemeContent } from './NavBar.styles'
 
 
 const Navbar = ({ ChangeTheme }) => {
@@ -14,10 +15,15 @@ const [show,setShow] = useState(false)
 useEffect(() => {
     const main = document.querySelector('main')
     const contato = document.querySelector('#contato')
+   
+    
+    !ChangeTheme && alert('Defina a propiedade ChangeTheme aonde estiver chamando a NavBar')
 
+    
     const enter = () => setShow(true)
     const exit = () => setShow(false)
 
+    
     contato.addEventListener('mouseenter', enter)
     contato.addEventListener('mouseleave', exit)
     contato.addEventListener('click', enter)
@@ -31,31 +37,49 @@ useEffect(() => {
     
 },[])
 
+useEffect(() =>{
+    const Theme = document.querySelector('#theme')
+
+    const changeTheme = () => ChangeTheme(theme.Title) 
+    
+    setCookie(null, 'scode.theme', theme.Title, {
+        maxAge:30 * 60 * 60 * 24, // 1 mês
+        sameSite:'lax'
+    })
+
+    Theme.addEventListener('click', changeTheme)
+
+    return () => {
+        Theme.removeEventListener('click', changeTheme)
+    }
+},[theme])
+
     return (
-        <nav id='nav'>
-            <NextImageLink href='/' src='/favicon.ico' width={50} height={50} alt='Logo'/>
-            <NextLink href='/about/' text='Sobre'/>
+        <Nav id='nav'>
+            <NextImageLink href='/' src={theme.Title === 'dark' ? '/img/logoD.png':'/img/logoL.png'} width={150} height={80} alt='Logo'/>
+            <NextLink href='/about/' text={<h2>Sobre</h2>}/>
+            <NextLink href='/blog/' text={<h2>Blog</h2>}/>
             <div id='contato'>
-                <NextLink href='#' text='Contato'/>
+                <NextLink href='#' text={<h2>Contato</h2>}/>
                 {!!show &&
-                    <nav>
-                        <NextLink href='#' target='_blank' text={<span>Icon whats</span>}/>
-                        <NextLink href='#' target='_blank' text={<span>Icon insta</span>}/>
-                        <NextLink href='#' target='_blank' text={<span>Icon message</span>}/>
-                    </nav>
+                    <Bar>
+                        <NextLink href='#' target='_blank' text={<h4>Whatsapp</h4>}/>
+                        <NextLink href='#' target='_blank' text={<h4>Instagram</h4>}/>
+                    </Bar>
                 }
             </div>
+            <div id='theme'>
             {theme.Title === 'dark' ?
-                <div>
+                <ThemeContent>
                     <Light width={50} height={50} Stop={false}/>
-                </div>
+                </ThemeContent>
                 :
-                <div>
+                <ThemeContent>
                     <Dark width={50} height={50} Stop={false}/>
-                </div>
+                </ThemeContent>
             }
-           
-        </nav>
+           </div>
+        </Nav>
     )
 }
 

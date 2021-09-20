@@ -6,7 +6,7 @@ import Error from '../src/components/animations/RobotError'
 import LoadRobot from '../src/components/animations/LoadRobot'
 import Navbar from '../src/components/NavBar/NavBar';
 
-const Generator = () => {
+const Generator = ({ ChangeTheme }) => {
 const { register, handleSubmit } = useForm()
 const [load, setLoad] = useState(null)
 const [data, setData] = useState()
@@ -59,9 +59,14 @@ const [data, setData] = useState()
 
     return (
         <div id='Page-Generator'>
-            <NextHead title='Scode portfólio | Gerador' robots='all' keywords='...' description='...'/>
+            <NextHead 
+                title='Scode portfólio | Gerador' 
+                robots='all' 
+                keywords='...' 
+                description='...'
+            />
             <header>
-               <Navbar />
+               <Navbar ChangeTheme={ChangeTheme}/>
             </header>
             <main>
                 <section>

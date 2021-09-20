@@ -8,9 +8,6 @@ export const Ancor = styled.a`
     transition: 1s;
     color: ${({theme}) => theme.colors.priStrong};
   }
-  h2{
-    background-color: ${({theme}) => theme.colors.surface};
-}
 `
 
 export const LinkContainer = styled.div`

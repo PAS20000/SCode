@@ -1,10 +1,10 @@
 import Navbar from "../src/components/NavBar/NavBar"
 
-const About = () => {
+const About = ({ ChangeTheme }) => {
     return (
         <div id='Page-About'>
             <header>
-               <Navbar />
+               <Navbar ChangeTheme={ChangeTheme}/>
             </header>
             <main>
                 <section>
