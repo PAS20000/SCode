@@ -8,7 +8,9 @@ margin: 0px;
 .circleImg{
     border-radius: 50%;
 }
-.back{
+.back{ 
     animation: Show 1s;
+    position: absolute;
+    z-index: -1;
 }
 `

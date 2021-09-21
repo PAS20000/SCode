@@ -6,8 +6,6 @@ flex-wrap: wrap;
 justify-content: space-between;
 background-color: ${({ theme }) => theme.colors.surface};
 border-bottom: solid;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
 border-width:1px;
 border-color: ${({ theme }) => theme.colors.pri};
 h2{
