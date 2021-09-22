@@ -1,3 +1,4 @@
+import Footer from "../src/components/Footer/Footer"
 import Navbar from "../src/components/NavBar/NavBar"
 
 const About = ({ ChangeTheme }) => {
@@ -22,7 +23,7 @@ const About = ({ ChangeTheme }) => {
                 </article>
             </main>
             <footer>
-                Rodapé...
+               <Footer/>
             </footer>
         </div>
     )

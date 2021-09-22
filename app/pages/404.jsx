@@ -4,6 +4,7 @@ import LoadError from '../src/components/animations/ServerError'
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
 import NextHead from "../src/components/Contracts/NextHead/NextHead"
+import Footer from "../src/components/Footer/Footer"
 
 const Custom404 = ({ ChangeTheme }) => {
 const theme = useContext(ThemeContext)
@@ -27,7 +28,7 @@ const theme = useContext(ThemeContext)
                 </section>
             </main>
             <footer>
-                rod...
+               <Footer/>
             </footer>
         </div>
     )

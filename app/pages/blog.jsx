@@ -1,5 +1,6 @@
 import NextHead from "../src/components/Contracts/NextHead/NextHead"
 import NextLink from "../src/components/Contracts/NextLink/NextLink"
+import Footer from "../src/components/Footer/Footer"
 import Navbar from "../src/components/NavBar/NavBar"
 import Post from "../src/components/Posts/Post"
 
@@ -25,7 +26,7 @@ const Blog = ({ ChangeTheme }) => {
                 </section>
             </main>
             <footer>
-
+                <Footer/>
             </footer>
         </div>
     )

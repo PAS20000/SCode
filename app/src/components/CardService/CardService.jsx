@@ -1,34 +1,36 @@
+import { AnimeContent, Flex, Subtitle, Title } from "./CardService.styles"
 
-const CardSevice = ({ animation, title, sub1, sub2, sub3, sbu4, text1, text2, text3, text4 }) => {
+
+const CardService = ({ animation, title, sub1, sub2, sub3, sub4, text1, text2, text3, text4 }) => {
 
     return (
         <article>
-            <div>
-                <div>
+            <Flex>
+                <Title>{title}</Title>
+                <AnimeContent>
                     {animation}
-                </div>
-            </div>
-            <h2>{title}</h2>
+                </AnimeContent>
+            </Flex>
             <div>
-                <h2>{sub1}</h2>
+                <Subtitle>{sub1}</Subtitle>
                 <p>
                     {text1}
                 </p>
             </div>
             <div>
-                <h2>{sub2}</h2>
+                <Subtitle>{sub2}</Subtitle>
                 <p>
                     {text2}
                 </p>
             </div>
             <div>
-                <h2>{sub3}</h2>
+                <Subtitle>{sub3}</Subtitle>
                 <p>
                     {text3}
                 </p>
             </div>
             <div>
-                <h2>{sbu4}</h2>
+                <Subtitle>{sub4}</Subtitle>
                 <p>
                     {text4}
                 </p>
@@ -37,4 +39,4 @@ const CardSevice = ({ animation, title, sub1, sub2, sub3, sbu4, text1, text2, te
     )
 }
 
-export default CardSevice
+export default CardService

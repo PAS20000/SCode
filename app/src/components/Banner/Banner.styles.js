@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 
 export const BannerContent = styled.div`
-
 button{
     color: ${({theme}) => theme.colors.priStrong};
     font-size: 50px;
@@ -22,6 +21,10 @@ button{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    min-height: 150px;
+    min-height: 200px;
 }
+`
+
+export const BannerDiv = styled.div`
+animation: Show 1s;
 `
