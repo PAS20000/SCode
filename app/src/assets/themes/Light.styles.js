@@ -2,8 +2,9 @@ export const light = {
     Title:'light',
     colors: {
       pri: '#fff',
-      priStrong:'#F2B90F',
+      sec:'#F8BBD0',
+      priStrong:'#FFF59D',
       back:'#d3d3d3',
-      surface:'#5058F2'
+      surface:'#ff2066'
     },
   }

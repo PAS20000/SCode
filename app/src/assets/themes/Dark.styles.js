@@ -2,7 +2,8 @@ export const dark = {
     Title:'dark',
     colors: {
       pri: '#5058F2',
-      priStrong:'#38ABF2',
+      sec:'#38ABF2',
+      priStrong:'#BB54FF',
       back:'#282a36',
       surface:'#16181f'
     },

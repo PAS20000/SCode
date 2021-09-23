@@ -7,7 +7,7 @@ justify-content: space-between;
 background-color: ${({ theme }) => theme.colors.surface};
 border-bottom: solid;
 border-width:1px;
-border-color: ${({ theme }) => theme.colors.pri};
+border-color: ${({ theme }) => theme.colors.priStrong};
 h2{
     margin-top: 15px;
     padding: 10px;

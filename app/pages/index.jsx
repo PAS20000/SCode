@@ -9,7 +9,7 @@ import { ThemeContext } from "styled-components"
 import AppL from "../src/components/animations/AppL"
 import AppD from "../src/components/animations/AppD"
 import Footer from "../src/components/Footer/Footer"
-import { Title } from "../src/assets/styles/Page-home.styles"
+import { Title, Content } from "../src/assets/styles/Page-home.styles"
 
 
 const Home = ({ ChangeTheme }) => {
@@ -34,11 +34,10 @@ const theme = useContext(ThemeContext)
         <Navbar ChangeTheme={ChangeTheme} />
       </header>
       <main>
-          <div>
-              <Banner />
-          </div>
           <section>
             <Title>Nossos serviços</Title>
+              <Banner />
+            <Content>
               <CardService
                 animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
                 title='Sua loja digital' 
@@ -63,6 +62,7 @@ const theme = useContext(ThemeContext)
                 sub4='Segurança'
                 text4='"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
               />
+            </Content>
           </section>
       </main>
       <footer>

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-export const ImgContainer = styled.span`
-background-color: transparent;
-margin: 0px;
+export const ImgContainer = styled.div`
+//position: absolute;
 
 .circleImg{
     border-radius: 50%;
