@@ -10,10 +10,6 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 1;
       }
     }
-    @keyframes Fade {
-      0%{transform:translateX(-1500px);}
-      100%{transform:translateX(0px);}
-    }
   }
   body {
     margin: 0;

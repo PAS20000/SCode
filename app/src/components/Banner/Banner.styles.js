@@ -42,6 +42,6 @@ position: absolute;
 }
 .fade{
     z-index: 1;
-    animation: Fade 1s;
+    animation: Show 1s;
 }
 `

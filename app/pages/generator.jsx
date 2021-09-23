@@ -5,11 +5,18 @@ import NextHead from '../src/components/Contracts/NextHead/NextHead'
 import Error from '../src/components/animations/RobotError'
 import LoadRobot from '../src/components/animations/LoadRobot'
 import Navbar from '../src/components/NavBar/NavBar';
+import Router from 'next/router'
 
 const Generator = ({ ChangeTheme }) => {
 const { register, handleSubmit } = useForm()
 const [load, setLoad] = useState(null)
 const [data, setData] = useState()
+
+
+
+useEffect(() => {
+    Router.push('/')
+}, [])
 
     async function Submit({search}) {        
         (async () => {

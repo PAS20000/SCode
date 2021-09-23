@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+/*import puppeteer from 'puppeteer'
 
 const Generator = async(req, res) => {
     if(req.method !== 'POST') return res.status(402).json({error:`Method ${req.method} not allowed`});
@@ -33,4 +33,4 @@ const Generator = async(req, res) => {
     }
 }
 
-export default Generator
+export default Generator*/

@@ -17,7 +17,7 @@ useEffect(() => {
     const show0 = () =>  setShow(['click',0])
     const show1 = () =>  setShow(['click',1])
     const show2 = () =>  setShow(['click',2])
-    const show3 = () => setShow(['click',3])
+    const show3 = () =>  setShow(['click',3])
     
     img0.addEventListener('click', show0)
     img1.addEventListener('click',show1)
