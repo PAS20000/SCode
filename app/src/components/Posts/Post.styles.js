@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Content = styled.article`
-font-family:Verdana, Geneva, Tahoma, sans-serif;
 padding: 20px;
 background-color: ${({theme}) => theme.colors.surface};
 border-style:solid;
@@ -20,4 +19,7 @@ p{
     padding: 10px;
     margin: 10px;
 }
+`
+export const CalltoAction = styled.div`
+padding: 10px;
 `

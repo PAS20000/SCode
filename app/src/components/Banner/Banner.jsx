@@ -56,23 +56,23 @@ useEffect(() => {
                     <button id='img3' type='button' title='Banner 4' className={show[1]=== 3 ? 'select':'normal'}></button> 
                 </div>
                     <BannerDiv>
-                    <NextImage src={theme.Title === 'light' ? '/img/storeL.png':'/img/storeD.png'}
-                        width={3500} height={1600} alt='Store' layout='intrinsic'className={show[1] === 0 || show[1] > 3 ? 'fade':'ghost'}
+                    <NextImage src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'}
+                        width={3500} height={1600} alt='loja virtual' layout='intrinsic'className={show[1] === 0 || show[1] > 3 ? 'fade':'ghost'}
                     />
                     </BannerDiv>
                     <BannerDiv>
-                    <NextImage src={theme.Title === 'light' ? '/img/ScodeCardL.png':'/img/ScodeCardD.png'} 
-                        width={3500} height={1600} alt='Card' layout='intrinsic' className={show[1] === 1 ? 'fade':'ghost'}
+                    <NextImage src={theme.Title === 'light' ? '/img/cartão-scode-light.png':'/img/cartão-scode-dark.png'} 
+                        width={3500} height={1600} alt='cartão Scode' layout='intrinsic' className={show[1] === 1 ? 'fade':'ghost'}
                     />
                      </BannerDiv>
                     <BannerDiv>
-                    <NextImage src={theme.Title === 'light' ? '/img/respL.png':'/img/respD.png'}
-                        width={3500} height={1600} alt='Resp' layout='intrinsic' className={show[1] === 2 ? 'fade':'ghost'}
+                    <NextImage src={theme.Title === 'light' ? '/img/site-responsivo-light.png':'/img/site-responsivo-dark.png'}
+                        width={3500} height={1600} alt='site responsivo' layout='intrinsic' className={show[1] === 2 ? 'fade':'ghost'}
                     />
                     </BannerDiv>
                     <BannerDiv>
-                    <NextImage src={theme.Title === 'light' ? '/img/respL2.png':'/img/respD2.png'}
-                        width={3500} height={1600} alt='Resp' layout='intrinsic' className={show[1] === 3 ? 'fade':'ghost'}
+                    <NextImage src={theme.Title === 'light' ? '/img/site-responsivo2-light.png':'/img/site-responsivo2-dark.png'}
+                        width={3500} height={1600} alt='site responsivo' layout='intrinsic' className={show[1] === 3 ? 'fade':'ghost'}
                     />
                     </BannerDiv>
                 

@@ -25,192 +25,30 @@ const theme = useContext(ThemeContext)
                 <section>
                     <Title>Blog Scode, informações sobre ecommerce, apps e marketing digital</Title>
                     <Post
-                        src={theme.Title === 'light' ? '/img/storeL.png':'/img/storeD.png'} width={500} height={250} 
-                        alt='Site pro' className='imgPost'
-                        href='https://www.agenciamacan.com.br/blog/a-importancia-de-ter-um-site-profissional#:~:text=Um%20site%20tamb%C3%A9m%20%C3%A9%20importante,no%20mercado%20e%20sem%20credibilidade.'
-                        ancorText='Mais detalhes sobre ter um site'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado. '
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
+                        src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'} width={500} height={250} 
+                        alt='loja virtual profissional' className='imgPost'
+                        title='title 1' 
+                        text={<>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </>}
+                        sub2='title 2'
+                        text2={<>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </>}
+                        sub3='title 3'
+                        text3={<>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </>}
+                        ancorLink='/contact/'
+                        ancorText='Quero ter um site!'
+                        ancorTarget='_self'
                     />
-                     <Post
-                        src={theme.title === 'dark' ? '/img/logoD.png':'/img/logoL.png'} width={250} height={125} alt='Logo da Scode' 
-                        href='https://www.cobrefacil.com.br/blog/plataformas-pagamento-online'
-                        ancorText='Sobre pagamentos online'
-                        title='Facilitamos para você, foque em outras áreas da sua empresa' 
-                        text='Fazer pagamentos online é um processo que pode gastar tempo, não se engane com portais de criação de sites na internet, 
-                        muitas vezes eles saiem mais caros a longo prazo e tratam tudo como genérico, sem a devida precaução sobre seu modelo de negócio. 
-                        Nós aqui da Scode, trabalharemos com a opção que mais favorece sua empresa, tanto financeiramente, 
-                        quanto para garantir a segurança do comprador, para que você possa focar em outras áreas da sua empresa. '
-                        sub2='Pagamento planejado'
-                        text2='O pagamento será planejado para atender seu negócio, 
-                        assim podemos garantir a melhor conversão em vendas e satisfação dos seus clientes, 
-                        você receberá informações de todo o processo, podendo mudar algo ao seu gosto ou simplesmente deixar com a gente'
-                        sub3='Podemos integrar com marketplaces '
-                        text3='Se você já utliza algum marketplace, como por exemplo o mercado-livre, podemos integrar funcionalidades dele com seu site,
-                        caso o seu modelo de negócio necessite. '
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-                     <Post
-                        src='/img/logoD.png' width={250} height={125} alt='Logo da Scode' 
-                        href='https://blog.contaazul.com/como-criar-site-para-empresa'
-                        ancorText='Como criar sites'
-                        title='Por que ter um site profissional?' 
-                        text='Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios.
-                        Uma das coisas que mais chama atenção em uma empresa, seja ela pequena, média ou grande. E você pode até pensar que, hoje em dia, 
-                        todo mundo sabe o quanto isso é importante para as empresas, mas, infelizmente, isso não é verdade. 
-                        Há muito que conscientizar sobre essa necessidade fundamental para o sucesso dos negócios. 
-                        Qualquer empresa que não tem um site profissional está perdendo uma das mais poderosas ferramentas de marketing disponíveis no mercado.'
-                        sub2='Por que um site é importante para uma empresa?'
-                        text2='A principal razão de ter um site é que as pessoas são mais susceptíveis de encontrar uma empresa que tem uma presença na web. 
-                        Hoje, a maioria das pessoas pesquisam produtos e serviços online antes de fazer uma compra, e se você não tem um site, 
-                        você está perdendo todo esse potencial de negócio. 
-                        Mesmo que as pessoas não comprem o seu produto online, elas vão pelo menos pesquisá-lo online para depois irem até o seu local físico, ou, 
-                        quem sabe, comprar futuramente. As possibilidades são inúmeras, e você não pode ignorá-las.'
-                        sub3='Meu negócio é local, então por que ter um site se não vendo pela internet?'
-                        text3='É correto afirmar que fazer vendas é uma das possibilidades que sua empresa ganha ao ter um site. 
-                        Da mesma forma, é incorreto afirmar que um site só serve para essa finalidade. Caso isso fosse verdadeiro, 
-                        todas as páginas da internet teriam como propósito comercializar produtos ou serviços. Porém, sabemos que não é isso que acontece.'
-                    />
-
                     {/* 9 Posts */}
                 </section>
             </main>
