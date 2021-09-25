@@ -6,4 +6,7 @@ export const ImgContainer = styled.div`
 .circleImg{
     border-radius: 50%;
 }
+.imgPost{
+    border-radius: 10px;
+}
 `

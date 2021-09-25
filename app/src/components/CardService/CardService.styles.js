@@ -6,15 +6,23 @@ padding: 5px;
 `
 
 export const Text = styled.div`
-    color: white;
     border-style: solid;
     border-color:${({theme}) => theme.colors.sec};
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     border-width: 2px;
     background-color:  ${({theme}) => theme.colors.surface};
     p{
+        color: white;
         padding: 10px;
+        margin: 10px;
+        a{
+            text-decoration: none;
+            color: ${({theme}) => theme.colors.sec};
+        }a:hover{
+            transition: 0.5s;
+            color: ${({theme}) => theme.colors.priStrong};
+        }
     }
 `
 
@@ -44,4 +52,9 @@ border-width: 1px;
 export const Flex = styled.div`
 display: flex;
 flex-wrap: wrap;
+`
+
+export const ImgContent = styled.div`
+padding: 20px;
+margin-bottom:10px;
 `

@@ -2,13 +2,13 @@ import Link from 'next/link'
 import { LinkContainer, Ancor } from './NextLink.styles'
 
 
-const NextLink = ({ text, target, href }) => {
+const NextLink = ({ text, target, href, className }) => {
     return (
         <LinkContainer>
-            <Link href={href} passHref>
-                <Ancor target={target}>
+            <Link href={href}>
+                <a target={target} className={className}>
                     {text}
-                </Ancor>
+                </a>
             </Link>
         </LinkContainer>
     )

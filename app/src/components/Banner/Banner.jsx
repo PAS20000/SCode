@@ -8,7 +8,7 @@ const theme = useContext(ThemeContext)
 const [show, setShow] = useState(['default',0])
 
 useEffect(() => {
-
+    
     const img0 = document.querySelector('#img0')
     const img1 = document.querySelector('#img1')
     const img2 = document.querySelector('#img2')
@@ -50,10 +50,10 @@ useEffect(() => {
     return (
         <BannerContent id='banners'>
                 <div id='flex'>
-                    <button id='img0' type='button' title='Banner anterior'  className={show[1] === 0 || show[1] > 3 ? 'select':'normal'}></button>
-                    <button id='img1' type='button' title='Banner posterior' className={show[1] === 1 ? 'select':'normal'}></button> 
-                    <button id='img2' type='button' title='Banner posterior' className={show[1]=== 2 ? 'select':'normal'}></button> 
-                    <button id='img3' type='button' title='Banner posterior' className={show[1]=== 3 ? 'select':'normal'}></button> 
+                    <button id='img0' type='button' title='Banner 1'  className={show[1] === 0 || show[1] > 3 ? 'select':'normal'}></button>
+                    <button id='img1' type='button' title='Banner 2' className={show[1] === 1 ? 'select':'normal'}></button> 
+                    <button id='img2' type='button' title='Banner 3' className={show[1]=== 2 ? 'select':'normal'}></button> 
+                    <button id='img3' type='button' title='Banner 4' className={show[1]=== 3 ? 'select':'normal'}></button> 
                 </div>
                     <BannerDiv>
                     <NextImage src={theme.Title === 'light' ? '/img/storeL.png':'/img/storeD.png'}

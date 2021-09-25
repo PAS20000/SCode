@@ -4,12 +4,14 @@ import Navbar from "../src/components/NavBar/NavBar"
 import CardService from "../src/components/CardService/CardService"
 import EcommerceL from "../src/components/animations/EcomL"
 import EcommerceD from "../src/components/animations/EcomD"
-import { useContext } from "react"
-import { ThemeContext } from "styled-components"
 import AppL from "../src/components/animations/AppL"
 import AppD from "../src/components/animations/AppD"
 import Footer from "../src/components/Footer/Footer"
 import { Title, Content } from "../src/assets/styles/Page-home.styles"
+import NextImage from "../src/components/Contracts/NextImage/NextImage"
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
+import NextLink from "../src/components/Contracts/NextLink/NextLink"
 
 
 const Home = ({ ChangeTheme }) => {
@@ -19,7 +21,7 @@ const theme = useContext(ThemeContext)
   return (
     <div id='Page-Home'>
       <NextHead
-        title='Scode soluções web, mobile e automação - Home'
+        title='Scode seu e-commerce, marketing digital e aplicativos -Home'
         robots='all'
         keywords='Scode, empresarial, site, marketing digital, vendas, lucro, renda extra, renda, 
         investimento, business, loja, ecommerce, wordpress, elementor, crie seu site, 1h, site em uma hora, web, app, mobile 
@@ -35,32 +37,62 @@ const theme = useContext(ThemeContext)
       </header>
       <main>
           <section>
-            <Title>Nossos serviços</Title>
+            <Title>Scode seu e-commerce, marketing digital e aplicativo</Title>
               <Banner />
             <Content>
               <CardService
                 animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
                 title='Sua loja digital' 
                 sub1='Personalização' 
-                text1='Aqui seu site vai ter a cara da sua marca, sua loja será única como a física e se destacará dos demais, introduziremos seu negócio no marketing digital, na internet sua empresa alcançará muito mais pessoas! ,caso possua material de design gráfico podemos usá-lo, se não fazemos nós mesmos!'
+                text1='Aqui seu site vai ter a cara da sua marca, sua loja será única como a física e se destacará dos demais, introduziremos seu negócio no marketing digital, na internet sua empresa alcançará muito mais pessoas, caso possua material de design gráfico podemos usá-lo, se não fazemos nós mesmos. '
+                links1={''}
+                moreLink1={<NextLink href='/blog/1' target='_self' text='Saiba mais' className='moreLink'/>}
+                images1={''}
                 sub2='Pagamento online'
-                text2='Receba pagamentos online dos seus clientes, venda seus produtos, serviços ou assinaturas em um domínio próprio garantido experência personalizada para seus usuários'
+                text2='Receba pagamentos online dos seus clientes, venda seus produtos, serviços ou assinaturas em um domínio próprio, garantido experência personalizada com a cara da sua empresa para seus usuários '
+                links2={''}
+                moreLink2={<NextLink href='/blog/2' target='_self' text='Saiba mais' className='moreLink'/>}
+                images2={<>
+                  <NextImage src='/img/pagamentosL.png' width={230} height={250}/>
+                </>}
                 sub3='Estabilidade'
-                text3='Sua loja virtual pode receber milhares de acessos sem compremeter os serviços e a experêcia de seus clientes.'
+                text3='Sua loja virtual pode receber milhares de acessos sem compremeter os serviços e a experêcia de seus clientes, usamos as mesmas tecnologias das empresas: '
+                links3={<>
+                  <a href="https://www.facebook.com/" target='_blank'> Facebook</a>,
+                  <a href="https://www.pichau.com.br/" target='_blank'> PichauGamer </a> e
+                  <a href="https://www.kabum.com.br/" target='_blank'> Kabum </a>
+                </>}
+                moreLink3={<NextLink href='/blog/3' target='_self' text='Saiba mais' className='moreLink'/>}
+                images3={''}
                 sub4='Segurança e sistemas'
-                text4='Usamos as melhores práticas de segurança do mercado, para garantir a integridade do seu ecommerce, podemos integrar a sua loja sistemas de controle de estoque, fluxo de venda e muito mais!'
+                text4='Usamos as melhores práticas de segurança do mercado, para garantir a integridade do seu ecommerce (LGPD), podemos integrar ou criar para sua loja, sistemas de controle de estoque, fluxo de venda e muito mais. '
+                links4={''}
+                moreLink4={<NextLink href='/blog/4' target='_self' text='Saiba mais' className='moreLink'/>}
+                images4={''}
               />
               <CardService
                 animation={theme.Title === 'dark' ? <AppD width={250} height={250} Stop={false}/> : <AppL width={250} height={250} Stop={false}/>}
                 title='Seu aplicativo' 
                 sub1='Personalização' 
-                text1='"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
-                sub2='Pagamento online'
-                text2='"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+                text1='Seu aplicativo completamente planejado para suprir as necessidades da sua empresa, sejam elas internas como, gestão, controle, ou externas, vendas online via aplicativo, serviços, assinaturas. '
+                links1={''}
+                moreLink1={<NextLink href='/blog/5' target='_self' text='Saiba mais' className='moreLink'/>}
+                images1={''}
+                sub2='Multiplataforma'
+                text2='Sua marca estará em todos os dispositivos, no caso de fechar um pacote completo com nós, qualquer pessoa que procurar por serviços ou produtos que você forneça, pode acabar chegando até seu site ou app, afim de comprar, assinar ou conhecer sua empresa. '
+                links2={''} 
+                moreLink2={<NextLink href='/blog/6' target='_self' text='Saiba mais' className='moreLink'/>}
+                images2={''}
                 sub3='Estabilidade'
-                text3='"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+                text3='Seu aplicativo pode receber milhares de acessos sem compremeter os serviços e a experêcia de seus clientes ou da sua empresa. '
+                links3={''}
+                moreLink3={<NextLink href='/blog/7' target='_self' text='Saiba mais' className='moreLink'/>}
+                images3={''}
                 sub4='Segurança'
-                text4='"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+                text4='Usamos as melhores práticas de segurança do mercado, para garantir a integridade (LGPD) do seu aplicativo, podemos integrar ou criar para sua loja sistemas de controle de estoque, fluxo de venda e mais. '
+                links4={''}
+                moreLink4={<NextLink href='/blog/8' target='_self' text='Saiba mais' className='moreLink'/>}
+                images4={''}
               />
             </Content>
           </section>

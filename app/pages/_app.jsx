@@ -12,9 +12,10 @@ const App = ({ Component, pageProps }) => {
 
   const ChangeTheme = (Title) => Title === 'light' ? setTheme(dark):setTheme(light)
 
+
   useEffect(() => {
     !!cookie_theme && cookie_theme === 'light' ? ChangeTheme('dark'):ChangeTheme('light')
-
+    
   },[])
 
   return (
