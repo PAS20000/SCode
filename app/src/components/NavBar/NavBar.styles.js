@@ -1,6 +1,12 @@
 import styled from "styled-components"
 
 export const Nav = styled.nav`
+@media(max-width: 644px) {
+    h2{
+        font-size: 16px;
+    }
+}
+
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
@@ -17,6 +23,7 @@ h2{
     cursor: pointer;
     padding:5px;
 }
+
 `
 
 export const Bar = styled.nav`
@@ -31,5 +38,8 @@ border-width:1px;
 `
 
 export const ThemeContent = styled.div`
+@media(max-width: 644px){
+    margin-top: 3px;
+}
 pointer-events: none;
 `

@@ -2,6 +2,7 @@ import NextImageLink from '../Contracts/NextImageLink/NextImageLink'
 import NextLink from '../Contracts/NextLink/NextLink'
 import Light from '../animations/Light'
 import Dark from '../animations/Dark'
+import useResponsiveListener from '../../hooks/useResponsiveListener'
 import { useContext, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { setCookie,  } from 'nookies'
@@ -10,11 +11,13 @@ import { Nav, ThemeContent } from './NavBar.styles'
 
 const Navbar = ({ ChangeTheme }) => {
 const theme = useContext(ThemeContext)
+const { windowSize } = useResponsiveListener()
+
 
 useEffect(() => {
-    
+
     !ChangeTheme && alert('Defina a propiedade ChangeTheme aonde estiver chamando a NavBar')
-   
+    
 },[])
 
 useEffect(() =>{
@@ -41,18 +44,24 @@ useEffect(() =>{
 
     return (
         <Nav id='nav'>
-            <NextImageLink href='/' src={theme.Title === 'light' ? '/img/logoL.png':'/img/logoD.png'} width={150} height={80} alt='Logo' />
+            {windowSize[0] >= 644 ?
+                <NextImageLink href='/' src={theme.Title === 'light' ? '/img/logoL.png':'/img/logoD.png'}
+                width={windowSize[0] >= 644 ? 150:100} height={windowSize[0] >= 644 ? 80:50} alt='Logo' />
+                :
+                <NextImageLink href='/' src={theme.Title === 'light' ? '/img/ScodeL.png':'/img/ScodeD.png'}
+                width={60} height={50} alt='Logo' />
+            }
             <NextLink href='/about/' text={<h2>Sobre</h2>} className='defaultLink'/>
             <NextLink href='/blog/' text={<h2>Blog</h2>} className='defaultLink'/>
             <NextLink href='/contact/' text={<h2>Contato</h2>} className='defaultLink'/>
             <div id='theme'>
             {theme.Title === 'dark' ?
                 <ThemeContent>
-                    <Light width={50} height={50} Stop={false}/>
+                    <Light width={windowSize[0] >= 644 ? 50:30} height={windowSize[0] >= 644 ? 50:30} Stop={false}/>
                 </ThemeContent>
                 :
                 <ThemeContent>
-                    <Dark width={50} height={50} Stop={false}/>
+                    <Dark width={windowSize[0] >= 644 ? 50:30} height={windowSize[0] >= 644 ? 50:30} Stop={false}/>
                 </ThemeContent>
             }
            </div>
