@@ -3,7 +3,7 @@ import NextImage from "../NextImage/NextImage"
 
 const NextImageLink = ({ href, src, target, alt, width, height, className }) => {
     return (
-        <div>
+        <div name='image-links'>
             <Link href={href}>
                 <a target={target}>
                     <NextImage src={src} alt={alt} width={width} height={height} className={className} priority/>

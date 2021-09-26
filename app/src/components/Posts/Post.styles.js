@@ -15,7 +15,7 @@ h2, h3{
     padding: 5px;
 }
 p{
-    color: white;
+    color: ${({theme}) => theme.colors.text};
     padding: 10px;
     margin: 10px;
 }

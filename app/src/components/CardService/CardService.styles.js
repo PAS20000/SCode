@@ -13,7 +13,7 @@ export const Text = styled.div`
     border-width: 2px;
     background-color:  ${({theme}) => theme.colors.surface};
     p{
-        color: white;
+        color: ${({theme}) => theme.colors.text};
         padding: 10px;
         margin: 10px;
         a{
@@ -52,6 +52,7 @@ border-width: 1px;
 export const Flex = styled.div`
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 `
 
 export const ImgContent = styled.div`

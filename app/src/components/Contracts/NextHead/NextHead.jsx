@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const NextHead = ({ title, keywords, description, robots }) => {
+const NextHead = ({ title, description, robots }) => {
     return (
         <>
             <Head>
@@ -8,7 +8,6 @@ const NextHead = ({ title, keywords, description, robots }) => {
                 <meta httpEquiv='content-language' content='pt'/>
                 <title>{title}</title>
                 <meta name='application-name' content='I-robot'/>
-                <meta name='keywords' keywords={keywords}/>
                 <meta name='description' content={description}/>
                 <meta name='robots' content={robots}/>
                 <meta name='author' content='PAS'/>

@@ -18,12 +18,13 @@ export const LinkContainer = styled.div`
   margin: 15px;
   border-radius: 10px;
   text-decoration: none;
-  color: white;
+  color: ${({theme}) => theme.colors.text};
   transition: 1s;
   background-color: ${({theme}) => theme.colors.sec};
 
 }
 .moreLink:hover{
+  color: white;
   transition: 1s;
   background-color: ${({theme}) => theme.colors.successStrong};
 }

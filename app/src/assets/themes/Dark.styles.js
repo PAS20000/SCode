@@ -6,6 +6,7 @@ export const dark = {
       priStrong:'#BB54FF',
       back:'#282a36',
       surface:'#16181f',
-      successStrong:'#41c300'
+      successStrong:'#41c300',
+      text:'#fff'
     },
   }

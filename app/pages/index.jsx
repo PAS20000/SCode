@@ -7,11 +7,9 @@ import EcommerceD from "../src/components/animations/EcomD"
 import AppL from "../src/components/animations/AppL"
 import AppD from "../src/components/animations/AppD"
 import Footer from "../src/components/Footer/Footer"
-import { Title, Content } from "../src/assets/styles/Page-home.styles"
-import NextImage from "../src/components/Contracts/NextImage/NextImage"
+import { Title, Content } from "../src/assets/styles/Title.styles"
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
-import NextLink from "../src/components/Contracts/NextLink/NextLink"
 
 
 const Home = ({ ChangeTheme }) => {
@@ -21,13 +19,8 @@ const theme = useContext(ThemeContext)
   return (
     <div id='Page-Home'>
       <NextHead
-        title='Scode seu e-commerce, marketing digital e aplicativos -Home'
+        title='Scode seu e-commerce, marketing digital e aplicativos'
         robots='all'
-        keywords='Scode, empresarial, site, marketing digital, vendas, lucro, renda extra, renda, 
-        investimento, business, loja, ecommerce, wordpress, elementor, crie seu site, 1h, site em uma hora, web, app, mobile 
-        site foda, como criar um site, como ganhar dinheiro, aula, tutorial,  riether, hostgator, dominio, hospedagem, 
-        Blog, lucrar, afiliados, hotmart, Empresarial, Site, 
-        Vender sites, Lucros, Online, fonte de renda, programacao'
         description='Scode soluções, precisando de um site ou app ?, 
         conte com nós, nós vamos muito além da criação do seu negócio na web ou mobile.
         Proporcionamos para você, criação de soluções web, android ou IOS, marketing digital e meios de monetização.'
@@ -44,72 +37,85 @@ const theme = useContext(ThemeContext)
                 animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
                 title='Sua loja digital' 
                 sub1='sub1'
-                images1={''}
+                imageSrc1={''}
                 text1={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
                 postName1='name'
+                ancorText1='Saiba Mais'
                 sub2='sub2'
-                images2={''}
+                imageSrc2={''}
                 text2={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
                 postName2='name'
+                ancorText2='Saiba Mais'
                 sub3='sub3'
+                imageSrc3={''}
                 text3={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
                 postName3='name'
+                ancorText3='Saiba Mais'
                 sub4='sub4'
-                images4={''}
+                imageSrc4={''}
                 text4={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
                  postName4='name'
+                 ancorText4='Saiba Mais'
               />
               <CardService
                 animation={theme.Title === 'dark' ? <AppD width={250} height={250} Stop={false}/> : <AppL width={250} height={250} Stop={false}/>}
                 title='Seu aplicativo' 
                 sub1='sub1'
-                images1={''}
+                imageSrc1={''}
+                alt1=''
                 text1={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink1={<NextLink href='/blog/5/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName1='name'
+                ancorText1='Saiba Mais'
                 sub2='sub2'
-                images2={''}
+                imageSrc2={''}
+                alt2=''
                 text2={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink2={<NextLink href='/blog/6/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName2='name'
+                ancorText2='Saiba Mais'
                 sub3='sub3'
-                images3={''}
+                imageSrc3={''}
+                alt4=''
                 text3={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink3={<NextLink href='/blog/7/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName3='name'
+                ancorText3='Saiba Mais'
                 sub4='sub4'
-                images4={''}
+                imageSrc4={''}
+                alt4=''
                 text4={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
-                 moreLink4={<NextLink href='/blog/8/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName4='name'
+                ancorText4='Saiba Mais'
               />
             </Content>
           </section>
