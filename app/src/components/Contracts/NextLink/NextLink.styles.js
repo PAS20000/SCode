@@ -14,16 +14,27 @@ export const LinkContainer = styled.div`
 }
 
 .moreLink{
-  color: ${({theme}) => theme.colors.surface};
   padding: 10px;
   margin: 15px;
-  background-color: ${({theme}) => theme.colors.pri};
   border-radius: 10px;
   text-decoration: none;
+  color: white;
+  transition: 1s;
+  background-color: ${({theme}) => theme.colors.sec};
+
 }
 .moreLink:hover{
   transition: 1s;
-  background-color: ${({theme}) => theme.colors.priStrong};
+  background-color: ${({theme}) => theme.colors.successStrong};
+}
+.moreLinkCalltoAction{
+  color: white;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 1s;
+  background-color: ${({theme}) => theme.colors.successStrong};
 }
 
 .allPosts{

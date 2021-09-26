@@ -6,7 +6,7 @@ const NextImageLink = ({ href, src, target, alt, width, height, className }) => 
         <div>
             <Link href={href}>
                 <a target={target}>
-                    <NextImage src={src} alt={alt} width={width} height={height} className={className} />
+                    <NextImage src={src} alt={alt} width={width} height={height} className={className} priority/>
                 </a>
             </Link>
         </div>

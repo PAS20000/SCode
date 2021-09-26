@@ -22,4 +22,5 @@ p{
 `
 export const CalltoAction = styled.div`
 padding: 10px;
+text-align: center;
 `

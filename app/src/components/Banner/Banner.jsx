@@ -8,7 +8,7 @@ const theme = useContext(ThemeContext)
 const [show, setShow] = useState(['default',0])
 
 useEffect(() => {
-    
+   
     const img0 = document.querySelector('#img0')
     const img1 = document.querySelector('#img1')
     const img2 = document.querySelector('#img2')

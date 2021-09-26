@@ -50,7 +50,7 @@ const theme = useContext(ThemeContext)
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink1={<NextLink href='/blog/1/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName1='name'
                 sub2='sub2'
                 images2={''}
                 text2={<>
@@ -58,14 +58,14 @@ const theme = useContext(ThemeContext)
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink2={<NextLink href='/blog/2/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName2='name'
                 sub3='sub3'
                 text3={<>
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
                 </>}
-                moreLink3={<NextLink href='/blog/3/' target='_self' text='Saiba mais' className='moreLink'/>}
+                postName3='name'
                 sub4='sub4'
                 images4={''}
                 text4={<>
@@ -73,7 +73,7 @@ const theme = useContext(ThemeContext)
                   <p>2</p>
                   <p>3</p>
                 </>}
-                 moreLink4={<NextLink href='/blog/4/' target='_self' text='Saiba mais' className='moreLink'/>}
+                 postName4='name'
               />
               <CardService
                 animation={theme.Title === 'dark' ? <AppD width={250} height={250} Stop={false}/> : <AppL width={250} height={250} Stop={false}/>}

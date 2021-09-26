@@ -6,13 +6,12 @@ import { Content } from './Footer.styles'
 const Footer = () => {
 const theme = useContext(ThemeContext)
 
-
     return (
         <Content>
-            <h3>Scode todos os direitos reservados ©️ 09/2021</h3>
             <div>
-                <NextImageLink src={theme.Title === 'light' ? '/img/fL.png':'/img/fD.png'} target='_blank' width={75} height={75} href='#' alt='Facebook logo'/>
-                <NextImageLink src={theme.Title === 'light' ? '/img/instaL.png':'/img/instaD.png'} target='_blank' width={75} height={75} href='#' alt='Instagram logo'/>
+                <h3>Scode todos os direitos reservados ©️ 09/2021</h3>
+                <NextImageLink src={theme.Title === 'light' ? '/img/fL.png':'/img/fD.png'} target='_blank' width={75} height={75} href='/' alt='Facebook logo'/>
+                <NextImageLink src={theme.Title === 'light' ? '/img/instaL.png':'/img/instaD.png'} target='_blank' width={75} height={75} href='/' alt='Instagram logo'/>
             </div>
         </Content>
     )

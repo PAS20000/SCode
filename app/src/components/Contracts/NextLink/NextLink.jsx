@@ -6,7 +6,7 @@ const NextLink = ({ text, target, href, className }) => {
     return (
         <LinkContainer>
             <Link href={href}>
-                <a target={target} className={className}>
+                <a target={target} className={className} name='Ancor'>
                     {text}
                 </a>
             </Link>

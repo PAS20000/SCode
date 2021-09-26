@@ -1,13 +1,10 @@
-import { useContext } from "react"
-import { ThemeContext } from "styled-components"
 import { Title } from "../../src/assets/styles/Page-blog.styles"
 import NextHead from "../../src/components/Contracts/NextHead/NextHead"
 import Footer from "../../src/components/Footer/Footer"
 import Navbar from "../../src/components/NavBar/NavBar"
-import Post from "../../src/components/Posts/Post"
+import Allposts from "../../src/components/Posts"
 
 const Blog = ({ ChangeTheme }) => {
-const theme = useContext(ThemeContext)
 
     return (
         <div id='Page-blog'>
@@ -24,32 +21,7 @@ const theme = useContext(ThemeContext)
             <main>
                 <section>
                     <Title>Blog Scode, informações sobre ecommerce, apps e marketing digital</Title>
-                    <Post
-                        src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'} width={500} height={250} 
-                        alt='loja virtual profissional' className='imgPost'
-                        title='title 1' 
-                        text={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                        </>}
-                        sub2='title 2'
-                        text2={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                        </>}
-                        sub3='title 3'
-                        text3={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                        </>}
-                        ancorLink='/contact/'
-                        ancorText='Quero ter um site!'
-                        ancorTarget='_self'
-                    />
-                    {/* 9 Posts */}
+                    <Allposts />
                 </section>
             </main>
             <footer>

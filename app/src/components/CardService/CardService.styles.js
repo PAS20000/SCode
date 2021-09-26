@@ -58,3 +58,7 @@ export const ImgContent = styled.div`
 padding: 20px;
 margin-bottom:10px;
 `
+
+export const CalltoAction = styled.div`
+padding: 10px;
+`
