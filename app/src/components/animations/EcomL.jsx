@@ -4,20 +4,20 @@ import animationData from '../../assets/json/ecommerceL.json'
 const defaultOptions = {
     loop: true,
     autoplay: true, 
-    animationData: animationData,
+    animationData: JSON.parse(JSON.stringify(animationData)),
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
 
-const EcommerceL = ({ height, width, Stop }) => {
+const EcommerceL = ({ height, width }) => {
     return(
     <>
           <Lottie options={defaultOptions}
              height={height}
              width={width}
-             isStopped={Stop}
-             isPaused={Stop}
+             isStopped={false}
+             isPaused={false}
             />
     </>
     )

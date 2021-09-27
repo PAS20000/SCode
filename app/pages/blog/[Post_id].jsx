@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import { Title } from "../../src/assets/styles/Title.styles"
 import NextHead from "../../src/components/Contracts/NextHead/NextHead"
 import NextLink from "../../src/components/Contracts/NextLink/NextLink"
 import Footer from "../../src/components/Footer/Footer"
@@ -23,7 +22,7 @@ const { query } = useRouter()
             </header>
             <main>
                 <section>
-                    <Title>Blog Scode, informações sobre ecommerce, apps e marketing digital</Title>
+                    <h1>Blog Scode, informações sobre ecommerce, apps e marketing digital</h1>
                     <NextLink text='Todos os posts' href='/blog/' className='allPosts' />
                     {!!query.Post_id && query.Post_id === 'name' &&
                         <h1>Nada</h1>

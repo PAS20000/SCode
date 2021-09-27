@@ -25,13 +25,17 @@ useEffect(() => {
     return (
         <Container>
             <Flex>
-                <Title>{title}</Title>
+                {!!title &&
+                    <Title>{title}</Title>
+                }
                 <AnimeContent>
                     {animation}
                 </AnimeContent>
             </Flex>
             <Text>
-                <Subtitle>{sub1}</Subtitle>
+                {!!sub1 &&
+                    <Subtitle>{sub1}</Subtitle>
+                }
                 {text1}
                 {!!imageSrc1 &&
                 <ImgContent>
@@ -43,7 +47,9 @@ useEffect(() => {
                     <NextLink href={`/blog/${postName1}/`} target='_self' text={ancorText1} className={ClassName}/>
                 </CalltoAction>
                 }
-                <Subtitle>{sub2}</Subtitle>
+                {!!sub2 &&
+                    <Subtitle>{sub2}</Subtitle>
+                }
                 {text2}
                 {!!imageSrc2 &&
                 <ImgContent>
@@ -55,7 +61,9 @@ useEffect(() => {
                     <NextLink href={`/blog/${postName2}/`} target='_self' text={ancorText2} className={ClassName}/>
                 </CalltoAction>
                 }
-                <Subtitle>{sub3}</Subtitle>
+                 {!!sub3 &&
+                    <Subtitle>{sub3}</Subtitle>
+                }
                 {text3}
                 {!!imageSrc3 &&
                 <ImgContent>
@@ -67,7 +75,9 @@ useEffect(() => {
                     <NextLink href={`/blog/${postName3}/`} target='_self' text={ancorText3} className={ClassName}/>
                 </CalltoAction>
                 }
-                <Subtitle>{sub4}</Subtitle>
+                 {!!sub4 &&
+                    <Subtitle>{sub4}</Subtitle>
+                }
                 {text4}
                 {!!imageSrc4 &&
                 <ImgContent>

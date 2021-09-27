@@ -5,8 +5,8 @@ import { LinkContainer, Ancor } from './NextLink.styles'
 const NextLink = ({ text, target, href, className }) => {
     return (
         <LinkContainer>
-            <Link href={href}>
-                <a target={target} className={className} name='Ancor'>
+            <Link href={href} passHref>
+                <a target={target} className={className}>
                     {text}
                 </a>
             </Link>

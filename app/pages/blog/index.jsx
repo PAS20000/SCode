@@ -1,4 +1,3 @@
-import { Title } from "../../src/assets/styles/Title.styles"
 import NextHead from "../../src/components/Contracts/NextHead/NextHead"
 import Footer from "../../src/components/Footer/Footer"
 import Navbar from "../../src/components/NavBar/NavBar"
@@ -20,7 +19,7 @@ const Blog = ({ ChangeTheme }) => {
             </header>
             <main>
                 <section>
-                    <Title>Blog Scode, informações sobre ecommerce, apps e marketing digital</Title>
+                    <h1>Blog Scode, informações sobre ecommerce, apps e marketing digital</h1>
                     <Allposts />
                 </section>
             </main>

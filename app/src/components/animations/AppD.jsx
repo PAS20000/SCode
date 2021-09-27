@@ -4,20 +4,20 @@ import animationData from '../../assets/json/appD.json'
 const defaultOptions = {
     loop: true,
     autoplay: true, 
-    animationData: animationData,
+    animationData: JSON.parse(JSON.stringify(animationData)),
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
 
-const AppD = ({ height, width, Stop }) => {
+const AppD = ({ height, width }) => {
     return(
     <>
           <Lottie options={defaultOptions}
              height={height}
              width={width}
-             isStopped={Stop}
-             isPaused={Stop}
+             isStopped={false}
+             isPaused={false}
             />
     </>
     )

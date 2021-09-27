@@ -1,12 +1,18 @@
 import NextImage from "../Contracts/NextImage/NextImage"
 import NextLink from "../Contracts/NextLink/NextLink"
-import { CalltoAction, Content } from "./Post.styles"
+import { CalltoAction, Content, AnimationContent } from "./Post.styles"
 
-const Post = ({ title, text, text2, text3, sub2, sub3, src, alt, width, height, className, ancorText, ancorLink, ancorTarget, classLink }) => {
+const Post = ({ title, text, text2, text3, sub2, sub3, src, alt, width, height, className, ancorText, ancorLink, ancorTarget, classLink, animation }) => {
 
     return (
         <Content>
-            <NextImage src={src} width={width} height={height} alt={alt} className={className}/>     
+            {!animation ?
+                <NextImage src={src} width={width} height={height} alt={alt} className={className}/>
+                :
+                <AnimationContent>
+                    {animation}
+                </AnimationContent>
+            }
             <h2>{title}</h2>
             {text}
             <h3>{sub2}</h3>
@@ -17,7 +23,6 @@ const Post = ({ title, text, text2, text3, sub2, sub3, src, alt, width, height, 
                 <NextLink href={ancorLink} target={ancorTarget} text={ancorText} className={classLink}/>
             </CalltoAction>
         </Content>
-         
     )
 }
 

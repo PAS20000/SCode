@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Content = styled.article`
+@media(max-width:644px){
+    padding: 10px;
+}
 padding: 20px;
 background-color: ${({theme}) => theme.colors.surface};
 border-style:solid;
@@ -23,4 +26,8 @@ p{
 export const CalltoAction = styled.div`
 padding: 10px;
 text-align: center;
+`
+
+export const AnimationContent = styled.div`
+pointer-events: none;
 `

@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from '../../assets/json/robot-load.json'
+import animationData from '../../assets/json/about.json'
 
 const defaultOptions = {
     loop: true,
@@ -10,7 +10,7 @@ const defaultOptions = {
     }
   };
 
-const LoadRobot = ({ height, width }) => {
+const AboutL = ({ height, width }) => {
     return(
     <>
           <Lottie options={defaultOptions}
@@ -22,4 +22,5 @@ const LoadRobot = ({ height, width }) => {
     </>
     )
 }
-export default LoadRobot
+
+export default AboutL
