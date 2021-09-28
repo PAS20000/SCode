@@ -30,7 +30,7 @@ const About = ({ ChangeTheme }) => {
                             <p>2</p>
                             <p>3</p>
                         </>}
-                        sub3='Como desenvolvemos soluções para seu negócio?'
+                        sub3='soluções para seu negócio'
                         text3={<>
                             <p>1</p>
                             <p>2</p>

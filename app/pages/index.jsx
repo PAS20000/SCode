@@ -19,24 +19,24 @@ const theme = useContext(ThemeContext)
   return (
     <div id='Page-Home'>
       <NextHead
-        title='Scode seu e-commerce, marketing digital e aplicativos'
+        title='Loja virtual, app e marketing digital com a Scode '
         robots='all'
-        description='Scode soluções, precisando de um site ou app ?, 
-        conte com nós, nós vamos muito além da criação do seu negócio na web ou mobile.
-        Proporcionamos para você, criação de soluções web, android ou IOS, marketing digital e meios de monetização.'
+        description='Nós da Scode vamos muito além da criação do seu negócio na web ou mobile. 
+        Criação de lojas virtuais(E-commerce), aplicativos Android ou IOS, marketing digital e meios de monetização.'
+        googleBot={true}
       />
       <header>
         <Navbar ChangeTheme={ChangeTheme} />
       </header>
       <main>
           <section>
-            <h1>Scode seu e-commerce, marketing digital e aplicativo</h1>
+            <h1>Loja digital, aplicativo e marketing com a Scode</h1>
               <Banner />
               <Content>
                 <CardService
                   animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
-                  title='Sua loja digital' 
-                  sub1='sub1'
+                  title='Ecommerce' 
+                  sub1='Personalização'
                   text1={<>
                     <p>1</p>
                     <p>2</p>
@@ -44,7 +44,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName1='name'
                   ancorText1='Saiba Mais'
-                  sub2='sub2'
+                  sub2='Pagamento online'
                   text2={<>
                     <p>1</p>
                     <p>2</p>
@@ -52,7 +52,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName2='name'
                   ancorText2='Saiba Mais'
-                  sub3='sub3'
+                  sub3='Estabilidade'
                   text3={<>
                     <p>1</p>
                     <p>2</p>
@@ -60,7 +60,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName3='name'
                   ancorText3='Saiba Mais'
-                  sub4='sub4'
+                  sub4='Segurança'
                   text4={<>
                     <p>1</p>
                     <p>2</p>
@@ -72,7 +72,7 @@ const theme = useContext(ThemeContext)
                 <CardService
                   animation={theme.Title === 'dark' ? <AppD width={250} height={250} Stop={false}/> : <AppL width={250} height={250} Stop={false}/>}
                   title='Seu aplicativo' 
-                  sub1='sub1'
+                  sub1='Modernidade'
                   text1={<>
                     <p>1</p>
                     <p>2</p>
@@ -80,7 +80,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName1='name'
                   ancorText1='Saiba Mais'
-                  sub2='sub2'
+                  sub2='Integração com site'
                   text2={<>
                     <p>1</p>
                     <p>2</p>
@@ -88,7 +88,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName2='name'
                   ancorText2='Saiba Mais'
-                  sub3='sub3'
+                  sub3='Google play store'
                   text3={<>
                     <p>1</p>
                     <p>2</p>
@@ -96,7 +96,7 @@ const theme = useContext(ThemeContext)
                   </>}
                   postName3='name'
                   ancorText3='Saiba Mais'
-                  sub4='sub4'
+                  sub4='Apple store'
                   text4={<>
                     <p>1</p>
                     <p>2</p>

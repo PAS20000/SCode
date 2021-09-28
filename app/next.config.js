@@ -13,9 +13,9 @@ module.exports = {
             source:'/:path*',
             headers:[{
                 key:'X-Frame-Options',
-                value:'DENY',
+                value:'SAMEORIGIN',
                 key:'x-robots-tag',
-                value:'all'
+                value:'all',
             }]
         }]
     }

@@ -12,9 +12,8 @@ const { query } = useRouter()
     return (
         <div id='Page-blog'>
             <NextHead 
-                title='Scode postagem'
+                title='Blog Scode postagem'
                 robots='all' 
-                keywords='...' 
                 description='...'
             />
             <header>
@@ -22,8 +21,10 @@ const { query } = useRouter()
             </header>
             <main>
                 <section>
-                    <h1>Blog Scode, informações sobre ecommerce, apps e marketing digital</h1>
-                    <NextLink text='Todos os posts' href='/blog/' className='allPosts' />
+                    <h1>Blog Scode</h1>
+                    <div style={{padding:'20px'}}>
+                        <NextLink text='Todos os posts' href='/blog/' className='allPosts' />
+                    </div>
                     {!!query.Post_id && query.Post_id === 'name' &&
                         <h1>Nada</h1>
                     }

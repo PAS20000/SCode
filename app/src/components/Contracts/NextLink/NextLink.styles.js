@@ -41,7 +41,7 @@ export const LinkContainer = styled.div`
 .allPosts{
   text-decoration: none;
   background-color: ${({theme}) => theme.colors.pri};
-  color: ${({theme}) => theme.colors.surface};
+  color: ${({theme}) => theme.colors.text};
   padding: 10px;
   border-radius: 10px;
   margin: 10px;

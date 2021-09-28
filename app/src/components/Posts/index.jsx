@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react"
 import { ThemeContext } from "styled-components"
 import useCallAction from "../../hooks/useCallAction"
 import useReponsiveListener from "../../hooks/useResponsiveListener"
-import Web from "../animations/Web"
 import Post from "./Post"
 
 const Allposts = () => {
@@ -21,7 +20,8 @@ useEffect(() => {
     return(
         <>
             <Post
-                animation={<Web width={windowSize[0] < 644 ? 300:400} height={windowSize[0] < 644 ? 300:400} Stop={false} />}
+                src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'} 
+                width={windowSize[0] >= 644 ? 3000:600} height={windowSize[0] >= 644 ? 1200:400}
                 alt='loja virtual profissional' className='imgPost'
                 title='title 1' 
                 text={<>
