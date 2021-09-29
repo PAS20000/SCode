@@ -9,11 +9,12 @@ justify-content: space-evenly;
 padding: 10px;
 margin-top: 25px;
 border-top: solid;
+border-width: 1px;
 border-color:  ${({theme}) => theme.colors.priStrong};
 
 h3{
     padding: 10px;
-    color: ${({theme}) => theme.colors.priStrong};
+    color: ${({theme}) => theme.colors.text};
 }
 div{
     display: flex;

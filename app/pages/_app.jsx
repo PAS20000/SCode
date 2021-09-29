@@ -7,7 +7,7 @@ import { parseCookies } from 'nookies'
 
 const App = ({ Component, pageProps }) => {
   
-  const [theme, setTheme] = useState(dark)
+  const [theme, setTheme] = useState(light)
   const {'scode.theme':cookie_theme} = parseCookies()
 
   const ChangeTheme = (Title) => Title === 'light' ? setTheme(dark):setTheme(light)

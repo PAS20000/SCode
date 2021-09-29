@@ -2,9 +2,13 @@ import CardService from "../src/components/CardService/CardService"
 import NextHead from "../src/components/Contracts/NextHead/NextHead"
 import Footer from "../src/components/Footer/Footer"
 import Navbar from "../src/components/NavBar/NavBar"
-import AboutL from '../src/components/animations/AboutL'
+import AboutD from '../src/components/animations/AboutL'
+import AboutLight from '../src/components/animations/About-light'
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
 
 const About = ({ ChangeTheme }) => {
+const theme = useContext(ThemeContext)
 
     return (
         <div id='Page-About'>
@@ -16,7 +20,7 @@ const About = ({ ChangeTheme }) => {
                 <section>
                     <h1>Sobre nós da Scode</h1>
                     <CardService
-                        animation={<AboutL width={250} height={250} Stop={false}/>}
+                        animation={theme.Title === 'light' ? <AboutLight width={250} height={250} Stop={false}/>:<AboutD width={250} height={250} Stop={false}/>}
                         title='Scode' 
                         sub1='Quem somos?'
                         text1={<>

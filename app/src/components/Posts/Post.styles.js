@@ -21,6 +21,14 @@ p{
     color: ${({theme}) => theme.colors.text};
     padding: 10px;
     margin: 10px;
+    a{
+        color: ${({theme}) => theme.colors.sec};
+        text-decoration: none;
+    }a:hover{
+        transition: 0.5s;
+        text-decoration: underline;
+        color: ${({theme}) => theme.colors.priStrong};
+    }
 }
 `
 export const CalltoAction = styled.div`

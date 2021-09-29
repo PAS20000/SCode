@@ -1,12 +1,12 @@
 export const dark = {
     Title:'dark',
     colors: {
-      pri: '#5058F2',
+      pri: '#fff',
       sec:'#38ABF2',
       priStrong:'#BB54FF',
       back:'#282a36',
-      surface:'#16181f',
-      successStrong:'#41c300',
+      surface:'#0D0D0D',
+      successStrong:'#006600',
       text:'#fff'
     },
   }

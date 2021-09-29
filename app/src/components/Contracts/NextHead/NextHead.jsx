@@ -9,11 +9,11 @@ const NextHead = ({ title, description, robots, googleBot }) => {
                 <title>{title}</title>
                 <meta property='og:type' content='website'/>
                 <meta property='og:locale' content='pt_BR' />
-                <meta property='og:url' content='https://www.meusite.com.br/ola-mundo' />
+                <meta property='og:url' content='http://localhost:3000/'/>
                 <meta property='og:title' content={title}/>
                 <meta property='og:site_name' content='Scode'/>
                 <meta property='og:description' content={description}/>
-                <meta property='og:image' content='www.meusite.com.br/img/loja-virtual-dark.png' />
+                <meta property='og:image' content='http://localhost:3000/img/loja-virtual-dark.png' />
                 <meta property='og:image:type' content='image/png'/>
                 <meta property='og:image:width' content='800'/>
                 <meta property='og:image:height' content='600'/> 

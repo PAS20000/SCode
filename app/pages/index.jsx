@@ -35,38 +35,73 @@ const theme = useContext(ThemeContext)
               <Content>
                 <CardService
                   animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
-                  title='Ecommerce' 
+                  title='Seu site na web' 
                   sub1='Personalização'
                   text1={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      Além de criarmos seu site com a cara da sua empresa, usamos estratégias de&nbsp;
+                      <a href='https://rockcontent.com/br/blog/marketing-digital/' target='_blank'>
+                        <strong>marketing digital</strong>
+                      </a> 
+                      &nbsp;para alavancar a divulgação da sua marca,
+                      afinal, um website serve para isso, todos devem conhecer o seu negócio incrível.
+                    </p>
+                    <p>
+                      Podemos usar materiais de design gráfico previamente fornecidos por vocês ou criar novos que podem também ser usados em redes socias, 
+                      para assim seu site conquistar uma&nbsp;
+                      <a href='https://rockcontent.com/br/blog/identidade-visual/' target='_blank'>
+                        <strong>identidade visual</strong>
+                      </a>, só de bater o olho as pessoas vão saber que a loja virtual é da sua marca.</p>
+                    <p>
+                      Fazemos temas dinâmicos para datas específicas, já entrou em algum site que muda seu visual no natal por exemplo?, 
+                      o seu e-commerce também pode, além de ter os temas light e dark que disponibilizamos por padrão.
+                    </p>
                   </>}
-                  postName1='name'
+                  postName1='Sobre sites'
                   ancorText1='Saiba Mais'
                   sub2='Pagamento online'
                   text2={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      Ultimamente as vendas online estão aumentando e dominando o mercado, você não pode perder sua fatia desse mercado também.
+                    </p>
+                    <p>
+                      Receba&nbsp;
+                      <a href='https://www.dlojavirtual.com/pagamento/conheca-8-principais-maneiras-de-receber-pagamentos-on-line/' target='_blank'>
+                        <strong>pagamentos online</strong>
+                      </a> via boleto, crédito, débito ou PIX dos seus clientes com segurança, credibilidade e transparência.
+                    </p>
                   </>}
-                  postName2='name'
+                  postName2=''
                   ancorText2='Saiba Mais'
                   sub3='Estabilidade'
                   text3={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      <a href='https://auditeste.com.br/como-a-performance-do-site-impacta-nas-vendas/' target='_blank'>
+                        <strong>Um site estável</strong>
+                      </a> é indispensável,
+                      seja para conversão de vendas no caso de uma loja virtual ou comodidade do usuário,
+                      assim ficando melhor posicionado no Google, já que o mesmo gosta de sites estáveis e rápidos,
+                      ninguém gosta de um site travando que não entrega seu conteúdo de forma constante.
+                    </p>
                   </>}
-                  postName3='name'
+                  postName3=''
                   ancorText3='Saiba Mais'
                   sub4='Segurança'
                   text4={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      A segurança de sua loja digital é fundamental, já que estamos falando de um trafégo de pagamentos, 
+                      onde dados de cartões de crédito, senhas, e-mails e outros dados sensíveis dos seus clientes devem
+                      ser protegidos.
+                    </p>
+                    <p>
+                      Vários negócios e lojas virtuais já sofreram&nbsp;
+                      <a href='https://www.techtudo.com.br/listas/2020/12/relembre-os-oito-maiores-vazamentos-de-dados-em-2020.ghtml' target='_blank'>
+                        <strong>vazamentos</strong>
+                      </a> de dados e 
+                      isso causa uma desconfiança enorme, por parte dos clientes que utilizam o seu e-commerce ou plataforma digital.
+                    </p>
                   </>}
-                  postName4='name'
+                  postName4='vazamentos de dados'
                   ancorText4='Saiba Mais'
                 />
                 <CardService
@@ -86,7 +121,7 @@ const theme = useContext(ThemeContext)
                     <p>2</p>
                     <p>3</p>
                   </>}
-                  postName2='name'
+                  postName2=''
                   ancorText2='Saiba Mais'
                   sub3='Google play store'
                   text3={<>
@@ -94,7 +129,7 @@ const theme = useContext(ThemeContext)
                     <p>2</p>
                     <p>3</p>
                   </>}
-                  postName3='name'
+                  postName3=''
                   ancorText3='Saiba Mais'
                   sub4='Apple store'
                   text4={<>
@@ -102,7 +137,7 @@ const theme = useContext(ThemeContext)
                     <p>2</p>
                     <p>3</p>
                   </>}
-                  postName4='name'
+                  postName4=''
                   ancorText4='Saiba Mais'
                 />
               </Content>

@@ -17,10 +17,11 @@ export const Text = styled.div`
         padding: 10px;
         margin: 10px;
         a{
-            text-decoration: none;
             color: ${({theme}) => theme.colors.sec};
+            text-decoration: none;
         }a:hover{
             transition: 0.5s;
+            text-decoration: underline;
             color: ${({theme}) => theme.colors.priStrong};
         }
     }

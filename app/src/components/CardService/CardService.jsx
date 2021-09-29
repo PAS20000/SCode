@@ -11,11 +11,11 @@ const CardService = ({
     imageSrc1, imageSrc2, imageSrc3, imageSrc4,
     alt1, alt2, alt3, alt4,
     postName1, postName2, postName3, postName4,
-    ancorText1, ancorText2, ancorText3, ancorText4
-
+    ancorText1, ancorText2, ancorText3, ancorText4,
+    
 }) => {
 
-const { ClassName, setClick } = useCallAction(['moreLink','moreLinkCalltoAction',2000,])
+const { ClassName, setClick } = useCallAction(['moreLink','moreLinkCalltoAction', 1200])
 
 useEffect(() => {
     return () => {
@@ -26,7 +26,7 @@ useEffect(() => {
         <Container>
             <Flex>
                 {!!title &&
-                    <Title>{title}</Title>
+                    <Title>{title}</Title> 
                 }
                 <AnimeContent>
                     {animation}
