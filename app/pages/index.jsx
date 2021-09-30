@@ -98,10 +98,10 @@ const theme = useContext(ThemeContext)
                       <a href='https://www.techtudo.com.br/listas/2020/12/relembre-os-oito-maiores-vazamentos-de-dados-em-2020.ghtml' target='_blank'>
                         <strong>vazamentos</strong>
                       </a> de dados e 
-                      isso causa uma desconfiança enorme, por parte dos clientes que utilizam o seu e-commerce ou plataforma digital.
+                      isso causa uma desconfiança enorme por parte dos clientes, que utilizam o seu e-commerce ou plataforma digital.
                     </p>
                   </>}
-                  postName4='vazamentos de dados'
+                  postName4=''
                   ancorText4='Saiba Mais'
                 />
                 <CardService
@@ -109,33 +109,46 @@ const theme = useContext(ThemeContext)
                   title='Seu aplicativo' 
                   sub1='Modernidade'
                   text1={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      Com o pensamento de que os celulares tomaram conta do mundo e, com isso, fez surgir diversas novas 
+                      oportunidades de negócios no dia a dia, justamente por causa dos recursos que são oferecidos.
+                      Hoje, é impossível classificar o aparelho celular apenas como um meio de ligação, ele é uma verdadeira parte do corpo, onde diversas 
+                      informações essenciais estão presentes nele.
+                    </p>
+                    <p>
+                      Seu negócio não pode ficar de fora do meio mobile, todos hoje em dia tem um celular e passam mais de 4 horas por dia nele, mesmo que seu aplicativo seja simples,
+                      a importância de ter um é evidente.
+                    </p>
                   </>}
-                  postName1='name'
+                  postName1='aplicativo'
                   ancorText1='Saiba Mais'
                   sub2='Integração com site'
                   text2={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      Nossos desenvolvimentos são conectados, caso peça um app e site ambos podem ser integrados, para facilitar seu gerenciamento em diversos dispositos.
+                    </p>
                   </>}
                   postName2=''
                   ancorText2='Saiba Mais'
                   sub3='Google play store'
                   text3={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p>
+                      Sua solução mobile estará disponibilizada na&nbsp;
+                      <a href="https://play.google.com/store?hl=pt_BR&gl=US" target='_blank'>
+                        <strong>Play Store</strong>
+                      </a> tanto para seus clientes, quanto para você.
+                    </p>
                   </>}
                   postName3=''
                   ancorText3='Saiba Mais'
                   sub4='Apple store'
                   text4={<>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                   <p>
+                      Sua solução mobile estará disponibilizada na&nbsp;
+                      <a href="https://www.apple.com/br/store" target='_blank'>
+                        <strong>Apple Store</strong>
+                      </a> tanto para seus clientes, quanto para você.
+                    </p>
                   </>}
                   postName4=''
                   ancorText4='Saiba Mais'

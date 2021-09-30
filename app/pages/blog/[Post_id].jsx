@@ -11,7 +11,7 @@ import useReponsiveListener from "../../src/hooks/useResponsiveListener"
 
 const onePost = ({ ChangeTheme }) => {
 const { windowSize } = useReponsiveListener()
-const {ClassName, setClick} = useCallAction(['moreLink','moreLinkCalltoAction', 1100])
+const {ClassName, setClick} = useCallAction(['moreLink','moreLinkCalltoAction', 1200])
 const { query } = useRouter()
 
 useEffect(() => {
@@ -45,9 +45,9 @@ useEffect(() => {
                        text={<>
                            <p> 
                                Se você já vende algo, sabe o quanto é difícil passar confiança para seus clientes, há um gasto de dinheiro e tempo muito grandes
-                               na criação de uma boa estratégia para credibilizar e&nbsp;
+                               na criação de uma boa estratégia para ascensão e&nbsp;
                                <a href="https://negociossc.com.br/blog/como-escolher-os-meios-de-divulgacao-ideais-para-o-seu-negocio" target='_blank'>
-                                   <strong>divulgar sua loja digital na web</strong>
+                                   <strong>divulgação da sua loja digital na web</strong>
                                </a>.
                            </p>
                            <p>
@@ -60,7 +60,7 @@ useEffect(() => {
                                com você sendo nosso cliente todo esse processo será facilitado, sua loja virtual terá todo o suporte necessário.
                            </p>
                            <p>
-                               Caso queira você mesmo cirar seu site, pode utilizar um CMS (Sistema de gerenciamento de conteúdo) com eles é 
+                               Caso queira você mesmo criar seu site, pode utilizar um CMS (Sistema de gerenciamento de conteúdo) com eles é 
                                possível você criar seu site sem saber programação, porém nem tudo são flores.&nbsp; 
                                <a href="https://agendamahala.com/cms-definicao-vantagens-e-desvantagens" target='_blank'>
                                    <strong>Saiba tudo sobre CMS.</strong>
@@ -89,6 +89,42 @@ useEffect(() => {
                        ancorLink='/contact/'
                        ancorText='Quero ter um site!'
                        classLink={ClassName}
+                   />
+                    }
+                    {!!query.Post_id && query.Post_id === 'aplicativo' &&
+                        <Post
+                        src={theme.Title === 'light' ? '/img/aplicativo-light.png':'/img/aplicativo-dark.png'} 
+                        width={windowSize[0] >= 644 ? 3000:600} height={windowSize[0] >= 644 ? 1200:400}
+                        alt='aplicativo profissional' className='imgPost'
+                        title='Celulares estão em todo lugar' 
+                        text={<>
+                            <p>
+                                Um <a href='https://blog.fabricadeaplicativos.com.br/fabapp/7-razoes-para-criar-um-app-para-o-seu-negocio/' target='_blank'>
+                                    <strong>aplicativo</strong>
+                                </a> para sua empresa, garante que você estará no dispositivo mais usado no mundo, o alcance do seu negócio irá aumentar
+                                de forma exponencial com um app bem construído.
+                            </p>
+                            <p>
+                                Além de ser um meio para divulgar, vender e informar, uma aplicação mobile pode também ser usada para gerenciar o seu negócio,
+                                por exemplo, suponha que você seja um restaurante, o garçom precisa ir até o cliente anotar o pedido caminhar até o setor da cozinha e informa-la,
+                                com um aplicativo o garçom simplesmente focaria em fazer os pedidos por meio do celular e a cozinha seria informada
+                                sobre o que precisa preparar em tempo real.
+                            </p>
+                        </>}
+                        sub2='Seu negócio cresce'
+                        text2={<>
+                            <p>
+                                Com um app, seus processos e gerenciamento podem ser simplificados, 
+                                assim agilizando seu crescimento e atendimento para com seus clientes.
+                                Conheça os&nbsp;
+                                <a href="https://www.rankmyapp.com/pt-br/aso/tipos-de-aplicativos-qual-o-mais-indicado-para-seu-negocio/" target='_blank'>
+                                   <strong>tipos de aplicativo</strong>
+                                </a>.
+                            </p>
+                        </>}
+                        ancorLink='/contact/'
+                        ancorText='Quero ter um aplicativo!'
+                        classLink={ClassName}
                     />
                     }
                 </section>

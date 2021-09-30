@@ -56,46 +56,31 @@ useEffect(() => {
                     <button id='img3' type='button' title='Banner 4' className={show[1]=== 3 ? 'select':'normal'}></button> 
             </ContentButtons>
             <BannerContent id='banners'>
-                    
-                    {windowSize[0] >= 644 ?
                         <div>
                             <BannerDiv>
                             <NextImage src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'}
-                                width={3500} height={1400} alt='loja virtual' layout='intrinsic'className={show[1] === 0 || show[1] > 3 ? 'fade':'ghost'}
+                                 width={windowSize[0] >= 644 ? 3500:2000} height={windowSize[0] >= 644 ? 1400:1200} alt='loja virtual' layout='intrinsic'className={show[1] === 0 || show[1] > 3 ? 'fade':'ghost'}
                             />
                         </BannerDiv>
                         <BannerDiv>
                         <NextImage src={theme.Title === 'light' ? '/img/cartão-scode-light.png':'/img/cartão-scode-dark.png'} 
-                                width={3500} height={1400} alt='cartão Scode' layout='intrinsic' className={show[1] === 1 ? 'fade':'ghost'}
+                                 width={windowSize[0] >= 644 ? 3500:2000} height={windowSize[0] >= 644 ? 1400:1200} alt='cartão Scode' layout='intrinsic' 
+                                 className={show[1] === 1 ? 'fade':'ghost'}
                             />
                             </BannerDiv>
                             <BannerDiv>
-                            <NextImage src={theme.Title === 'light' ? '/img/site-responsivo-light.png':'/img/site-responsivo-dark.png'}
-                                width={3500} height={1400} alt='site responsivo' layout='intrinsic' className={show[1] === 2 ? 'fade':'ghost'}
+                            <NextImage src={theme.Title === 'light' ? '/img/aplicativo-light.png':'/img/aplicativo-dark.png'}
+                                 width={windowSize[0] >= 644 ? 3500:2000} height={windowSize[0] >= 644 ? 1400:1200} alt='site responsivo' layout='intrinsic' 
+                                 className={show[1] === 2 ? 'fade':'ghost'}
                             />
                             </BannerDiv>
                             <BannerDiv>
                             <NextImage src={theme.Title === 'light' ? '/img/site-responsivo2-light.png':'/img/site-responsivo2-dark.png'}
-                                width={3500} height={1400} alt='site responsivo' layout='intrinsic' className={show[1] === 3 ? 'fade':'ghost'}
+                                 width={windowSize[0] >= 644 ? 3500:2000} height={windowSize[0] >= 644 ? 1400:1200} alt='site responsivo' layout='intrinsic' 
+                                 className={show[1] === 3 ? 'fade':'ghost'}
                             />
                             </BannerDiv>
                         </div>
-                        :
-                        <div>
-                            <BannerDiv>
-                                <NextImage src={theme.Title === 'light' ? '/img/loja-virtual-light.png':'/img/loja-virtual-dark.png'}
-                                    width={windowSize[0] >= 644 ? 3500:1400} height={windowSize[0] >= 644 ? 1400:900} alt='loja virtual' layout='intrinsic'
-                                    className={show[1] === 0 || show[1] > 3 ? 'fade':'ghost'}
-                                />
-                            </BannerDiv>
-                            <BannerDiv>
-                            <NextImage src={theme.Title === 'light' ? '/img/site-responsivo2-light.png':'/img/site-responsivo2-dark.png'}
-                                width={windowSize[0] >= 644 ? 3500:1400} height={windowSize[0] >= 644 ? 1400:900} alt='site responsivo' layout='intrinsic' 
-                                className={show[1] === 1 ? 'fade':'ghost'}
-                            />
-                            </BannerDiv>
-                        </div>
-                    }
             </BannerContent> 
         </div>
     )

@@ -24,27 +24,47 @@ const theme = useContext(ThemeContext)
                         title='Scode' 
                         sub1='Quem somos?'
                         text1={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
+                            <p>
+                                Já pensou você ter uma agência digital, empresa de desenvolvimento de software e infraestrutura de
+                                TI em um só lugar? Assim é a Scode.
+                            </p>
+                            <p>
+                                Buscamos, ser ágeis acima de tudo,
+                                um lugar de constante desenvolvimento onde nosso time possa desafiar-se para crescer profissionalmente, 
+                                não apenas em suas áreas de especialização mas em todas as outras que os cercam.
+                                Buscamos exceder expectativas com qualidade no que se é desenvolvido ou criado
+                            </p>
                         </>}
                         sub2='O que desenvolvemos?'
                         text2={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
+                            <p>
+                                Desenvolvemos, hospedamos e realizamos o Marketing Digital de seu negócio ou ideia, 
+                                além de criar aplicativos e sites com gerenciamento para seu negócio.
+                            </p>
                         </>}
-                        sub3='soluções para seu negócio'
+                        sub3='Soluções para seu negócio'
                         text3={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
+                            <p>
+                                Aplicativos para android e IOS, queremos que sua marca esteja em todos os dispositivos possíveis e facilitamos todo o processo para que isso seja possível.
+                            </p>
                         </>}
                         sub4='Scode nas mídias socias'
                         text4={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
+                            <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Siga-nos no Instagram</strong>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Siga-nos no Facebook</strong>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Mande uma mensagem no Whatsapp</strong>
+                                </a>
+                            </p>
                         </>}
                     />
                 </section>

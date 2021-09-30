@@ -24,9 +24,21 @@ const { windowSize } = useReponsiveListener()
                         animation={<EmailContact width={windowSize[0] >= 644  ? 400:300} height={250} />}
                         title='Nosso contato' 
                         text1={<>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
+                              <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Mande uma mensagem no Instagram</strong>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Mande uma mensagem no Facebook</strong>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="#" target='_blank'>
+                                    <strong>Mande uma mensagem no Whatsapp</strong>
+                                </a>
+                            </p>
                         </>}
                     />
 

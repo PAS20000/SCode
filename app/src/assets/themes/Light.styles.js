@@ -4,7 +4,7 @@ export const light = {
       pri: '#fff',
       sec:'#F2B90F',
       priStrong:'#FF4700',
-      back:'#E4E4E4',
+      back:'#fff',
       surface:'#0D0D0D',
       successStrong:'#006600',
       text:'#fff'
