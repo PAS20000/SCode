@@ -1,4 +1,3 @@
-import Banner from "../src/components/Banner/Banner"
 import NextHead from "../src/components/Contracts/NextHead/NextHead"
 import Navbar from "../src/components/NavBar/NavBar"
 import CardService from "../src/components/CardService/CardService"
@@ -10,6 +9,7 @@ import Footer from "../src/components/Footer/Footer"
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
 import { Content } from "../src/assets/themes/Global.styles"
+import Background from "../src/components/Background/Background"
 
 
 const Home = ({ ChangeTheme }) => {
@@ -31,8 +31,8 @@ const theme = useContext(ThemeContext)
       <main>
           <section>
             <h1>Loja digital, aplicativo e marketing com a Scode</h1>
-              <Banner />
-              <Content>
+            <Background/>
+              <div>
                 <CardService
                   animation={theme.Title === 'dark' ? <EcommerceD width={250} height={250} Stop={false}/> : <EcommerceL width={250} height={250} Stop={false}/>}
                   title='Seu site na web' 
@@ -153,7 +153,7 @@ const theme = useContext(ThemeContext)
                   postName4=''
                   ancorText4='Saiba Mais'
                 />
-              </Content>
+              </div>
           </section>
       </main>
       <footer>

@@ -3,7 +3,7 @@ export const dark = {
     colors: {
       pri: '#fff',
       sec:'#38ABF2',
-      priStrong:'#BB54FF',
+      priStrong:'#7936ff',
       back:'#282a36',
       surface:'#0D0D0D',
       successStrong:'#006600',

@@ -44,7 +44,7 @@ useEffect(() => {
         if(show[0] != 'click') {
             show[1] > 3 ? setShow(['default', 0]):slideTime()
         }
-
+    //console.log(show)
 } , [show])
 
     return (

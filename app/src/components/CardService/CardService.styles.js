@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const Container = styled.article`
-padding: 5px;
+padding: 0px 25px;
 `
 
 export const Text = styled.div`

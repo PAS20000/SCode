@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
+import Form from "../src/components/Form/Form"
 import EmailContact from '../src/components/animations/EmailContact'
 import CardService from "../src/components/CardService/CardService"
 import NextHead from "../src/components/Contracts/NextHead/NextHead"
@@ -21,17 +22,20 @@ const { windowSize } = useReponsiveListener()
                 <section>
                     <h1>Contate-nos, para o orçamento do seu site, loja virtual ou aplicativo</h1>
                     <CardService
-                        animation={<EmailContact width={windowSize[0] >= 644  ? 400:300} height={250} />}
+                        animation={
+                            <EmailContact width={windowSize[0] >= 644  ? 400:300} height={250} />
+                        }
                         title='Nosso contato' 
-                        text1={<>
-                              <p>
+                        sub4='Scode nas mídias socias'
+                        text4={<>
+                            <p>
                                 <a href="#" target='_blank'>
-                                    <strong>Mande uma mensagem no Instagram</strong>
+                                    <strong>Siga-nos no Instagram</strong>
                                 </a>
                             </p>
                             <p>
                                 <a href="#" target='_blank'>
-                                    <strong>Mande uma mensagem no Facebook</strong>
+                                    <strong>Siga-nos no Facebook</strong>
                                 </a>
                             </p>
                             <p>
@@ -41,8 +45,8 @@ const { windowSize } = useReponsiveListener()
                             </p>
                         </>}
                     />
-
-                </section>
+                   
+                </section>  
             </main>
             <footer>
                 <Footer />
