@@ -1,15 +1,29 @@
-const Form = () => {
+import { useState } from "react"
+import { useTheme } from "styled-components"
+import NextImage from "../Contracts/NextImage/NextImage"
+import { Card } from "./Form.styles"
+
+const Form = ({}) => {
+   const [login, setLogin] = useState(true)
+   const theme = useTheme()
+
    return(
-       <form>
-           <label htmlFor="celular">Celular</label>
-           <input type="cell" />
-           <label htmlFor="Email">Email</label>
-           <input type="email" />
-           <label htmlFor="Menssagem">Menssagem</label>
-           <textarea name="" id="" cols="30" rows="10" aria-setsize='0'>
-                   
-           </textarea>
-       </form>
+       <Card onLoad={ () => alert('caso não queira se registrar, Usuário: admin, Senha: admin')}>
+            <form>
+                <NextImage 
+                    src={theme.Title === 'light' ? '/img/ScodeL.png':'/img/ScodeD.png'}
+                    width={90} height={90} alt='Logo' 
+                />
+                <label htmlFor="email">Email</label>
+                <input type="email"  placeholder="Seu melhor email"/>
+                <label htmlFor="senha">Senha</label>
+                <input type="password" placeholder="Sua senha"/>
+                <button type="submit" className="login">{!!login ? 'Login':'Registrar-se'}</button>
+                {!!login &&
+                    <button className='register' onClick={() => setLogin(false)}>registre-se</button>
+                }
+            </form>
+       </Card>
    )
 }
 

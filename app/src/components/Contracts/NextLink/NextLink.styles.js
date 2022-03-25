@@ -6,7 +6,6 @@ export const LinkContainer = styled.div`
 .defaultLink{
   color: ${({theme}) => theme.colors.pri};
   text-decoration: none;
- 
 }
 .defaultLink:hover{
   transition: 1s;

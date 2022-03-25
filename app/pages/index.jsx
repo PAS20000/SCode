@@ -8,8 +8,8 @@ import AppD from "../src/components/animations/AppD"
 import Footer from "../src/components/Footer/Footer"
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
-import { Content } from "../src/assets/themes/Global.styles"
 import Background from "../src/components/Background/Background"
+import H1 from "../src/components/Title/Title"
 
 
 const Home = ({ ChangeTheme }) => {
@@ -30,7 +30,7 @@ const theme = useContext(ThemeContext)
       </header>
       <main>
           <section>
-            <h1>Loja digital, aplicativo e marketing com a Scode</h1>
+            <H1 text="Loja digital, aplicativo e marketing com a Scode"/>
             <Background/>
               <div>
                 <CardService

@@ -19,12 +19,10 @@ const App = ({ Component, pageProps }) => {
   },[])
 
   return (
-    <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} ChangeTheme={ChangeTheme}/>
       </ThemeProvider>
-    </>
   )
 }
 

@@ -53,7 +53,7 @@ useEffect(() =>{
             }
             <NextLink href='/about/' text={<h2>Sobre</h2>} className='defaultLink'/>
             <NextLink href='/blog/' text={<h2>Blog</h2>} className='defaultLink'/>
-            <NextLink href='/contact/' text={<h2>Contato</h2>} className='defaultLink'/>
+            <NextLink href='/dashboard/' text={<h2>Dashboard</h2>} className='defaultLink'/>
             <div id='theme'>
             {theme.Title === 'dark' ?
                 <ThemeContent>
