@@ -1,8 +1,8 @@
 import { Box ,Text, useColorModeValue, Heading, Divider, SimpleGrid, Container, Avatar, Flex, Stack } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
+import { comments } from "../../pages/api/social"
 
-
-function SocialProof({ comments }) {
+function SocialProof() {
   
     return(
       <div>
