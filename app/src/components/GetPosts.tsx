@@ -1,23 +1,9 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { IPost } from "../../pages/api/posts";
 import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
+import {posts} from '../../pages/api/posts'
 
 export default function GetPosts() {
-    const [posts, setPosts] = useState<Array<IPost>>([])
-
-    useEffect(() => {
-        const data = async () => { 
-            const resp = await axios('http://localhost:3000/api/posts')  //https://scode-sigma.vercel.app/
-            setPosts(resp.data)
-            
-        }
-
-        data()
-    }, [])
-
 
     return(
         <div>
