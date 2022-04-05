@@ -13,7 +13,7 @@ function About(){
     return(
         <div>
             <header>
-               <Nav />
+               <Nav about={true} contact={false}/>
                <Box p={'15px'}  w={'full'} bg={useColorModeValue('gray.200','gray.900')} height={70} />
             </header>
             <main>

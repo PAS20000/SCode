@@ -12,7 +12,7 @@ function Home(){
     return(
         <div>
             <header>
-                <Nav />
+                <Nav about={null} contact={null}/>
                 <Box p={'15px'}  w={'full'} bg={useColorModeValue('gray.200','gray.900')} height={70} />
             </header>
             <main>
