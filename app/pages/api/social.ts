@@ -43,3 +43,7 @@ const createdAt = new Date().toLocaleDateString()
         image:'/img/matheus.jpg',
         createdAt
     }]
+
+export default function Social(req:NextApiRequest, res:NextApiResponse) {
+    return res.status(200).json(comments)
+}

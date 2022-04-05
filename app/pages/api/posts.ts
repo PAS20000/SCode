@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 export interface IPost {
     id:number
@@ -28,3 +29,7 @@ export const posts = [{
     image:'/img/design.jpg',
     createdAt
 }]
+
+export default function Posts(req:NextApiRequest, res:NextApiResponse) {
+  return res.status(200).json(posts)
+}
