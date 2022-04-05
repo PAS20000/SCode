@@ -15,8 +15,18 @@ import {
   ModalCloseButton,
   ModalFooter,
   Button,
-  Flex
+  Flex,
+  keyframes
 } from '@chakra-ui/react';
+import { useState } from 'react';
+
+
+const show = keyframes`
+  from {opacity:0;}
+  to {opacity:1;}
+`;
+
+
 
 export default function PostCard({  
   post_id,
@@ -24,12 +34,17 @@ export default function PostCard({
   postTitle, 
   postDescription,
   postImage,
+  postGif,
   postDate
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
-
+  const [img, setImg] = useState(postImage)
+  const showAnimation = `${show}  1s linear`;
   return (
-    <Center py={12} as={'article'}>
+    <Center py={12} as={'article'}  
+    onMouseEnter={() => setImg(postGif)}
+    onMouseLeave={() => setImg(postImage)}
+    onClick={() => setImg(postImage)}>
       <Box onClick={onOpen}
         role={'group'}
         p={6}
@@ -56,7 +71,7 @@ export default function PostCard({
             pos: 'absolute',
             top: 5,
             left: 0,
-            backgroundImage: `url(${postImage ? postImage:'/img/digital_art.jpg'})`,
+            backgroundImage: `url(${postImage})`,
             filter: 'blur(15px)',
             zIndex: -1,
           }}
@@ -67,11 +82,12 @@ export default function PostCard({
           }}
           >
           <Image
+            animation={showAnimation}
             rounded={'lg'}
             height={250}
             width={282}
             objectFit={'cover'}
-            src={postImage ? postImage:'/img/digital_art.jpg'}
+            src={img}
           />
         </Box>
         <Stack pt={10} align={'center'}>

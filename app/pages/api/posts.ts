@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 export interface IPost {
     id:number
     image:string
+    gif:string
     title:string
     description:string
     details:string
@@ -20,6 +21,7 @@ export const posts = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
@@ -27,6 +29,23 @@ export const posts = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'teste',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'teste',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 }]
 

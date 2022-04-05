@@ -13,7 +13,8 @@ export default function GetPosts() {
                 key={post.id} 
                 post_id={post.id} 
                 postDescription={post.description} 
-                postImage={post.image} 
+                postImage={post.image}
+                postGif={post.gif} 
                 postTitle={post.title} 
                 postDate={post.createdAt}
                 postDetails={post.details}

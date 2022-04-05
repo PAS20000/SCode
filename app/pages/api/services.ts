@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 export interface IServices {
     id:number
     image:string
+    gif:string
     title:string
     description:string
     details:string
@@ -20,6 +21,7 @@ export const services = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
@@ -27,6 +29,7 @@ export const services = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
@@ -34,6 +37,7 @@ export const services = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
@@ -41,6 +45,7 @@ export const services = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
@@ -48,6 +53,7 @@ export const services = [{
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/design.jpg',
+    gif:'/img/testGif.gif',
     createdAt
 }]
 

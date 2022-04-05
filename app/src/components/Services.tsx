@@ -13,7 +13,8 @@ export default function Serives() {
                 postDate={''} 
                 postDescription={service.description} 
                 postDetails={service.details} 
-                postImage={service.image} 
+                postImage={service.image}
+                postGif={service.gif} 
                 postTitle={service.title} 
                 post_id={service.id}
             />)}
