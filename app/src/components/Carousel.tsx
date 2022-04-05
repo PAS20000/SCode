@@ -33,7 +33,6 @@ export default function Carousel(){
   const cards = [
     '/img/design.jpg',
     '/img/build.jpg',
-    '/img/logo.png'
   ];
 
   return (
