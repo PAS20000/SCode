@@ -12,8 +12,8 @@ function SocialProof() {
                 <Flex justifyContent='center' mt={4} key={comment.id}>
                   <Box background={useColorModeValue('white', 'gray.800')} boxShadow={'dark-lg'} width={'90%'}>
                     <Stack direction='column'  align={'center'}>
-                      <Avatar src={comment.image} name={comment.name} size={'2xl'} p={'1'} m={'5'} bg={useColorModeValue('#ffbf00','cyan.300')}/>
-                      <Heading mb={2} fontSize={32}>
+                      <Avatar src={comment.image} name={comment.name} size={'2xl'} p={'1'} m={'5'} bg={useColorModeValue('cyan.500','purple.300')}/>
+                      <Heading mb={2} fontSize={32} color={useColorModeValue('cyan.500','purple.300')}>
                          {comment.name}
                       </Heading>
                     </Stack>

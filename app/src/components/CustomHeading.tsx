@@ -1,10 +1,12 @@
-import { Divider, Heading, useColorModeValue } from "@chakra-ui/react"
+import { Divider, Heading, Square, useColorModeValue } from "@chakra-ui/react"
 
 function CustomHeading({ text }) {
     return (
-        <Heading textAlign={'center'} color={useColorModeValue('purple.500','purple.300')}>
+        <Heading textAlign={'center'} color={useColorModeValue('cyan.500','purple.300')} mt={10}>
                 {text}
-                <Divider mt={2}/>
+                <Square>
+                    <Divider  bg={useColorModeValue('blue','purple.300')} mt={5} mb={5} width={'50%'}/>
+                </Square>
          </Heading>
     )
 }
