@@ -31,14 +31,15 @@ export default function Carousel(){
 
   // These are the images used in the slide
   const cards = [
-    '/img/design.jpg',
-    '/img/build.jpg',
+    '/img/banner1.png',
+    '/img/banner2.png',
+    '/img/banner3.png'
   ];
 
   return (
     <Box
       position={'relative'}
-      height={'600px'}
+      height={'50%'}
       width={'full'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
@@ -86,7 +87,7 @@ export default function Carousel(){
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={'xl'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

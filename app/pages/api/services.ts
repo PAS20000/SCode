@@ -17,42 +17,42 @@ const createdAt = new Date().toLocaleDateString()
 
 export const services = [{
     id: crypto.randomBytes(32).toString('hex'),
-    title:'Loja Virtual',
+    title:'Service',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'Lading Pages',
+    title:'Service',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'Lading Pages',
+    title:'Service',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'Lading Pages',
+    title:'Service',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 },  {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'Lading Pages',
+    title:'Service',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }]

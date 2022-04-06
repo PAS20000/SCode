@@ -17,34 +17,34 @@ const createdAt = new Date().toLocaleDateString()
 
 export const posts = [{
     id: crypto.randomBytes(32).toString('hex'),
-    title:'teste',
+    title:'post',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'teste',
+    title:'post',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'teste',
+    title:'post',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'teste',
+    title:'post',
     description:lorem + lorem + lorem,
     details:lorem,
-    image:'/img/design.jpg',
+    image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
 }]

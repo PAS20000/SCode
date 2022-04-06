@@ -16,7 +16,7 @@ import {
   ModalFooter,
   Button,
   Flex,
-  keyframes
+  keyframes,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -94,7 +94,7 @@ export default function PostCard({
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
             {postDate}
           </Text>
-          <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={700} textTransform={'uppercase'} color={useColorModeValue('cyan.500','purple.300')}>
+          <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={700} textTransform={'uppercase'} color={useColorModeValue('cyan.500','purple.300')} >
             {postTitle}
           </Heading>
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
@@ -112,7 +112,7 @@ export default function PostCard({
          
           <Flex align={'center'}>
             <Center flexWrap={'wrap'} boxShadow={'dark-lg'} background={useColorModeValue('white','gray.900')}>
-                  <Heading textTransform={'uppercase'} p={5}>
+                  <Heading textTransform={'uppercase'} p={5} color={useColorModeValue('cyan.500','purple.300')} textDecoration={'underline'}>
                     {postTitle} {postDate}
                   </Heading>
                   <Text p={5}>{postDescription}</Text>
