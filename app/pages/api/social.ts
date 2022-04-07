@@ -37,8 +37,8 @@ const createdAt = new Date().toLocaleDateString()
         createdAt
     }, {
         id: crypto.randomBytes(32).toString('hex'),
-        name:'Matheus Oliveira',
-        tag:'@Matheus_Oliveira',
+        name:'Matheus Augusto',
+        tag:'@Matheus_Augusto',
         description:lorem + lorem + lorem,
         image:'/img/matheus.jpg',
         createdAt
