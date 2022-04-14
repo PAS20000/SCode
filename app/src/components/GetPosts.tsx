@@ -15,22 +15,23 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { Page, Bnext, Breturn, DeviceData, DeviceLastPage, PageCard } = 
+    const { Bnext, Breturn, DeviceData, DeviceLastPage, PageCard } = 
     
     useStaticPagination({
         data:posts, 
         sliceCell:1, 
         sliceDesktop:3, 
         sliceTv:4,
-        classStyle:"redCircle",
+        classStyle:'default',
         arrowWeight:100
     })
-    
+
+    //console.log(Result)
     return(
         <div>
             <CustomHeading text={'Postagens da Scode'}/>
-            {Breturn} {PageCard} {Bnext}
-            <SimpleGrid columns={4} spacing={4}>
+            {Breturn} {PageCard}-{DeviceLastPage} {Bnext}
+            <SimpleGrid columns={{base:1, md:3, lg:4}} spacing={4}>
             {DeviceData.map(post => <PostCard 
                 key={post.id} 
                 post_id={post.id} 

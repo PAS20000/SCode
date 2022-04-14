@@ -47,6 +47,54 @@ export const posts = [{
     image:'/img/build.jpg',
     gif:'/img/testGif.gif',
     createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
+}, {
+    id: crypto.randomBytes(32).toString('hex'),
+    title:'post',
+    description:lorem + lorem + lorem,
+    details:lorem,
+    image:'/img/build.jpg',
+    gif:'/img/testGif.gif',
+    createdAt
 }]
 
 export default function Posts(req:NextApiRequest, res:NextApiResponse) {

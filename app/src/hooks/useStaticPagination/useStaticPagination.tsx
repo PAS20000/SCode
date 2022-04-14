@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import css from './useStaticPagination.module.css'
 
+
 interface IMainFactory {
     DeviceName:string,
     ReturnPage: Function
@@ -13,7 +14,6 @@ interface IMainFactory {
 type Range = [100,200,300,400,500]
 
 type Styles = ['default','redCircle', 'orangeCircle']
-
 
 interface IProps<T> {
     data:Array<T>
@@ -43,17 +43,9 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ MaxItems ] = useState(data.length)
-    const [ PageCards, setPageCards ] = useState([])
     const [ SliceCell, setSliceCell ] = useState(sliceCell)
     const [ SliceDesktop, setSliceDesktop ] = useState(sliceDesktop)
     const [ SliceTv, setSliceTv ] = useState(sliceTv)
-
-   
-    useMemo(() => {
-        for (let index = 1; index < Page + 2; index++) {
-            setPageCards(prev => [...prev, index])
-        }
-    }, [])
 
     useEffect(() => {
         const w = window.innerWidth
@@ -61,12 +53,12 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         setWidth(w)
     }, [])
 
-    console.log(PageCards)
     const Device = ():IDevice => {
    
         if(width < 500){
             const lastPage = Math.ceil(MaxItems / sliceCell)
             const slice = `slice(${Start}-${SliceCell})`
+              
             const Data = data.slice(Start, SliceCell)
 
             return {
@@ -103,7 +95,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     }
 
     const MainFactory = ():IMainFactory => {
-        const { device, lastPage, slice, Data} = Device()
+        const { device, lastPage, slice, Data } = Device()
 
         if(device === 'cell'){
            
@@ -138,7 +130,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setSliceDesktop(sliceDesktop + SliceDesktop)
                     setPage(Page + 1)
                 },
-                DeviceSlice:slice,
+                DeviceSlice: slice,
                 DeviceData:Data,
                 DeviceLastPage:lastPage,
             }
@@ -157,7 +149,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setSliceTv(sliceTv + SliceTv)
                     setPage(Page + 1)
                 },
-                DeviceSlice:slice,
+                DeviceSlice: slice,
                 DeviceData:Data,
                 DeviceLastPage:lastPage,
             }
@@ -166,7 +158,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
 
     const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory()
 
-    const Bnext = 
+ const Bnext = 
 
     <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
         <span>
@@ -174,17 +166,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         </span>
     </button>
 
- const PageCard = PageCards.map((page,index) => 
- 
-    <button key={index} className={css[classStyle]}>
-        <span>
-            {page}
-        </span>
-    </button>
-)
-       
-
-    const Breturn =
+ const Breturn =
 
     <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Page === 1 ? css['disabled']: css[classStyle ?? 'default']}>
         <span>
@@ -192,18 +174,25 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         </span>
     </button>
 
+const PageCard = 
+<button>
+    <span className={css['select']}>
+        {Page}
+    </span>
+</button>
+
     return {
         Result:MainFactory(),
         DeviceName,
         DeviceSlice,
         Start, 
         Page,
+        PageCard,
         NextPage,
         ReturnPage,
         DeviceData,
         DeviceLastPage,
         Bnext,
-        PageCard,
         Breturn
     }
 }
