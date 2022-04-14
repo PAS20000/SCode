@@ -1,0 +1,35 @@
+.default {
+    padding: 5px;
+    margin: 5px;
+}
+.default:hover {
+    transition: 1s;
+    color: #B794F4;
+}
+.disabled{
+    pointer-events: none;
+    color: transparent;
+}
+.orangeCircle {
+    background-color:orange;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+}
+
+.orangeCircle:hover{
+    transition: 1s;
+    background-color: gray;
+}
+
+.redCircle {
+    background-color:red;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+}
+
+.redCircle:hover{
+    transition: 1s;
+    background-color: gray;
+}
