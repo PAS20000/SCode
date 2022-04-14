@@ -29,7 +29,7 @@ export default function GetPosts() {
     return(
         <div>
             <CustomHeading text={'Postagens da Scode'}/>
-                {MainHtml}
+                <MainHtml />
             <SimpleGrid columns={{base:1, md:3, lg:4}} spacing={4}>
             {DeviceData.map(post => <PostCard 
                 key={post.id} 

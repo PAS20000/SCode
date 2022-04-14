@@ -158,25 +158,29 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
 
     const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory()
 
- const MainHtml = 
-<div>
-    <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Page === 1 ? css['disabled']: css[classStyle ?? 'default']}>
-        <span>
-            {Arrows.left[arrowWeight]}
-        </span>
-    </button>
-        <span className={css['select']}>
-            {Page}
-        </span>
-        <span>
-            -{DeviceLastPage}
-        </span>
-    <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
-        <span>
-            {Arrows.right[arrowWeight]}
-        </span>
-    </button>
-</div>
+ const MainHtml = () =>{
+     return(
+        <div>
+            <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Page === 1 ? css['disabled']: css[classStyle ?? 'default']}>
+                <span>
+                    {Arrows.left[arrowWeight]}
+                </span>
+            </button>
+                <span className={css['select']}>
+                    {Page}
+                </span>
+                
+                <span>
+                    {'-' + DeviceLastPage}
+                </span>
+            <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
+                <span>
+                    {Arrows.right[arrowWeight]}
+                </span>
+            </button>
+        </div>
+    )
+}
 
 
     return {
