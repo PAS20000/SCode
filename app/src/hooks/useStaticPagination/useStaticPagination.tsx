@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import css from './useStaticPagination.module.css'
 
 interface IMainFactory {
@@ -36,22 +36,32 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
+
+
 export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps<Object>) {
     const [ width, setWidth] = useState(0)
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ MaxItems ] = useState(data.length)
+    const [ PageCards, setPageCards ] = useState([])
     const [ SliceCell, setSliceCell ] = useState(sliceCell)
     const [ SliceDesktop, setSliceDesktop ] = useState(sliceDesktop)
     const [ SliceTv, setSliceTv ] = useState(sliceTv)
 
    
+    useMemo(() => {
+        for (let index = 1; index < Page + 2; index++) {
+            setPageCards(prev => [...prev, index])
+        }
+    }, [])
+
     useEffect(() => {
         const w = window.innerWidth
-    
+        
         setWidth(w)
     }, [])
 
+    console.log(PageCards)
     const Device = ():IDevice => {
    
         if(width < 500){
@@ -153,15 +163,26 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
             }
         }
     }
+
     const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory()
 
     const Bnext = 
-    
+
     <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
         <span>
             {Arrows.right[arrowWeight]}
         </span>
     </button>
+
+ const PageCard = PageCards.map((page,index) => 
+ 
+    <button key={index} className={css[classStyle]}>
+        <span>
+            {page}
+        </span>
+    </button>
+)
+       
 
     const Breturn =
 
@@ -182,6 +203,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         DeviceData,
         DeviceLastPage,
         Bnext,
+        PageCard,
         Breturn
     }
 }

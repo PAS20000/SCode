@@ -24,6 +24,7 @@
 
 .redCircle {
     background-color:red;
+    margin-left: 10px;
     border-radius:50%;
     width:40px;
     height:40px;
