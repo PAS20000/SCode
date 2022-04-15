@@ -26,6 +26,9 @@ interface IProps {
     sliceTv:number
     arrowWeight?:Range[number]
     classStyle?:Styles[number]
+    cellWidth?:number
+    desktopWidth?:number
+    tvWidth?:number
 }
 
 interface IDevice {
@@ -40,8 +43,7 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
-
-export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
+export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle, cellWidth, desktopWidth, tvWidth}:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
@@ -57,12 +59,13 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     },[])
 
     const Device = ():IDevice => {
-   
-        if(width < 500){
-           
+        const cell = cellWidth ? cellWidth:500
+        const desktop = tvWidth ? tvWidth:1300 && width > cell
+        const tv = tvWidth ? tvWidth:1300
+    
+        if(width < cell){
             const lastPage = Math.ceil(MaxItems / sliceCell)
             const slice = `slice(${Start}-${SliceCell})`
-              
             const Data = data.slice(Start, SliceCell)
 
             return {
@@ -72,7 +75,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                 Data
             }
         }
-        if(width < 1300 && width > 500){
+        if(width < desktop){
             const lastPage = Math.ceil(MaxItems / sliceDesktop)
             const slice = `slice(${Start}-${SliceDesktop})`
             const Data = data.slice(Start, SliceDesktop)
@@ -84,7 +87,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                 Data
             }
         }
-        else {
+        if(width > tv) {
             const lastPage = Math.ceil(MaxItems / sliceTv)
             const slice = `slice(${Start}-${SliceTv})`
             const Data = data.slice(Start, SliceTv)
