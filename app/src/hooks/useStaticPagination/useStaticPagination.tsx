@@ -26,9 +26,6 @@ interface IProps {
     sliceTv:number
     arrowWeight?:Range[number]
     classStyle?:Styles[number]
-    cellWidth?:number
-    desktopWidth?:number
-    tvWidth?:number
 }
 
 interface IDevice {
@@ -43,7 +40,7 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
-export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle, cellWidth, desktopWidth, tvWidth}:IProps) {
+export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
@@ -59,9 +56,9 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     },[])
 
     const Device = ():IDevice => {
-        const cell = cellWidth ? cellWidth:500
-        const desktop = desktopWidth ? desktopWidth:1200
-        const tv = tvWidth ? tvWidth:1300
+        const cell = 500
+        const desktop = 1200
+        const tv = 1300
     
         if(width < cell){
             const lastPage = Math.ceil(MaxItems / sliceCell)
@@ -111,7 +108,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setPages(prev => [...prev,count])
                 }
             }
-            if(device === 'desktop'&& existWidth){
+            if(device === 'desktop' && existWidth){
     
                 for ( let count = 1; count - 1 < lastPage; count++) {
                     setPages(prev => [...prev,count])
