@@ -20,7 +20,11 @@ export default function GetPosts() {
         sliceCell:1,
         sliceDesktop:3,
         sliceTv:4,
-        CountPageLimit:5,
+        CountPageLimit:{
+            cell:5,
+            desktop:3,
+            tv:2
+        },
       })
 
     console.log(Result)

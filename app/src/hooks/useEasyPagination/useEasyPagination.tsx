@@ -27,7 +27,11 @@ interface IProps {
     sliceTv:number
     arrowWeight?:Range[number]
     classStyle?:Styles[number],
-    CountPageLimit?:number
+    CountPageLimit?:{
+        cell:number
+        desktop:number
+        tv:number
+    }
 }
 
 interface IDevice {
@@ -103,29 +107,49 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
 
         (function({ device, lastPage }){
             const existWidth = width !== 0
-            const existCountSalt = ():number | any => {
-                if(CountPageLimit > lastPage){
+            const existCountSalt = (deviceType:string):number | any => {
+                if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
                     return alert(
                         `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
                     )
                 }
-                return CountPageLimit ? CountPageLimit : lastPage
+                if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
+                    return alert(
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                    )
+                }
+                if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
+                    return alert(
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                    )
+                }
+                if(deviceType === 'cell'){
+                    return CountPageLimit.cell
+                }
+                if(deviceType === 'desktop'){
+                    return CountPageLimit.desktop
+                }
+                if(deviceType === 'tv'){
+                    return CountPageLimit.tv
+                }
+                
+                return alert('Unexpected error')
             }
             if(device === 'cell' && existWidth ){
                 
-                for ( let count = 1; count - 1 < existCountSalt(); count++) {
+                for ( let count = 1; count - 1 < existCountSalt('cell'); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
             if(device === 'desktop' && existWidth){
     
-                for ( let count = 1; count - 1 < existCountSalt(); count++) {
+                for ( let count = 1; count - 1 < existCountSalt('desktop'); count++) {
                     setPages(prev => [...prev,count])
                 }
             } 
             if(device === 'tv'&& existWidth) {
                 
-                for ( let count = 1; count - 1 < existCountSalt(); count++) {
+                for ( let count = 1; count - 1 <existCountSalt('tv'); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
