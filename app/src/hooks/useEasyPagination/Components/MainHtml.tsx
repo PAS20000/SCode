@@ -1,4 +1,4 @@
-import { CssInject } from '../functions/CssInJect'
+import { CssInject } from '../functions/CssInject'
 import { IMainFactory, IMainHtmlProps } from '../useEasyPagination.types'
 
 const Arrows = {
