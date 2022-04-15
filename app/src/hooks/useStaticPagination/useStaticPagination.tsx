@@ -101,22 +101,23 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         }
     }
     useEffect(() => {
-       
-        (function({ device, lastPage }){
 
-            if(device === 'cell' && width !== 0){
+        (function({ device, lastPage }){
+            const existWidth = width !== 0
+
+            if(device === 'cell' && existWidth ){
                 
                 for ( let count = 1; count - 1 < lastPage; count++) {
                     setPages(prev => [...prev,count])
                 }
             }
-            if(device === 'desktop'&& width !== 0){
+            if(device === 'desktop'&& existWidth){
     
                 for ( let count = 1; count - 1 < lastPage; count++) {
                     setPages(prev => [...prev,count])
                 }
             } 
-            if(device === 'tv'&& width !== 0) {
+            if(device === 'tv'&& existWidth) {
                 
                 for ( let count = 1; count - 1 < lastPage; count++) {
                     setPages(prev => [...prev,count])
@@ -127,8 +128,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     }, [width])
     
 
-    const MainFactory = ():IMainFactory => {
-        const { device, lastPage, slice, Data } = Device()
+    const MainFactory = ({ device, lastPage, slice, Data }):IMainFactory => {
 
         if(device === 'cell'){
            
@@ -189,7 +189,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         }
     }
 
-    const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory()
+    const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory(Device())
 
  const MainHtml = ({CountPages}:MainHtmlProps) => {
      return(
@@ -225,7 +225,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
 
 
     return {
-        Result:MainFactory(),
+        Result:MainFactory(Device()),
         DeviceName,
         DeviceSlice,
         Start, 
