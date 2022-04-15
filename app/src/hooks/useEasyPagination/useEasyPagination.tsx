@@ -110,17 +110,17 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
             const existCountSalt = (deviceType:string):number | any => {
                 if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
                     return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}, DataLength: ${MaxItems}`
                     )
                 }
                 if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
                     return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}, DataLength: ${MaxItems}`
                     )
                 }
                 if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
                     return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}, DataLength: ${MaxItems}`
                     )
                 }
                 if(deviceType === 'cell'){
@@ -132,7 +132,7 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
                 if(deviceType === 'tv'){
                     return CountPageLimit.tv
                 }
-                
+
                 return alert('Unexpected error')
             }
             if(device === 'cell' && existWidth ){
@@ -149,7 +149,7 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
             } 
             if(device === 'tv'&& existWidth) {
                 
-                for ( let count = 1; count - 1 <existCountSalt('tv'); count++) {
+                for ( let count = 1; count - 1 < existCountSalt('tv'); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
