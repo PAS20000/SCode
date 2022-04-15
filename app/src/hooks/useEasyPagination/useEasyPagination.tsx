@@ -103,61 +103,75 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
             }
         }
     }
+    const existCountSalt = (deviceType:string, lastPage:number):number | any => {
+        if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
+            return alert(
+                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}, DataLength: ${MaxItems}`
+            )
+        }
+        if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
+            return alert(
+                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}, DataLength: ${MaxItems}`
+            )
+        }
+        if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
+            return alert(
+                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}, DataLength: ${MaxItems}`
+            )
+        }
+        if(deviceType === 'cell'){
+            return CountPageLimit.cell
+        }
+        if(deviceType === 'desktop'){
+            return CountPageLimit.desktop
+        }
+        if(deviceType === 'tv'){
+            return CountPageLimit.tv
+        }
+
+        return alert('Unexpected error')
+    }
+
+    useMemo(() => {
+
+        (function({ device,lastPage }){
+            if(Page > existCountSalt(device, lastPage)){
+                setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages,Page])
+            }
+            
+        })(Device());
+
+    }, [Page])
+  
     useMemo(() => {
 
         (function({ device, lastPage }){
             const existWidth = width !== 0
-            const existCountSalt = (deviceType:string):number | any => {
-                if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
-                    return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}, DataLength: ${MaxItems}`
-                    )
-                }
-                if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
-                    return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}, DataLength: ${MaxItems}`
-                    )
-                }
-                if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
-                    return alert(
-                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}, DataLength: ${MaxItems}`
-                    )
-                }
-                if(deviceType === 'cell'){
-                    return CountPageLimit.cell
-                }
-                if(deviceType === 'desktop'){
-                    return CountPageLimit.desktop
-                }
-                if(deviceType === 'tv'){
-                    return CountPageLimit.tv
-                }
-
-                return alert('Unexpected error')
-            }
+            
             if(device === 'cell' && existWidth ){
-                
-                for ( let count = 1; count - 1 < existCountSalt('cell'); count++) {
+
+                for ( let count = 1; count - 1 < existCountSalt(device, lastPage ); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
             if(device === 'desktop' && existWidth){
-    
-                for ( let count = 1; count - 1 < existCountSalt('desktop'); count++) {
+               
+                for ( let count = 1; count - 1 < existCountSalt(device, lastPage); count++) {
                     setPages(prev => [...prev,count])
                 }
+                
             } 
             if(device === 'tv'&& existWidth) {
-                
-                for ( let count = 1; count - 1 < existCountSalt('tv'); count++) {
+
+                for ( let count = 1; count - 1 < existCountSalt(device, lastPage); count++) {
                     setPages(prev => [...prev,count])
                 }
+               
             }
         })(Device());
         
     }, [width])
     
-
     const MainFactory = ({ device, lastPage, slice, Data }):IMainFactory => {
 
         if(device === 'cell'){
@@ -236,6 +250,8 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
 
     const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory(Device())
 
+    
+
  const MainHtml = ({CountPages}:MainHtmlProps) => {
      return(
         <div>
@@ -267,7 +283,6 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
         </div>
     )
 }
-
 
     return {
         Result:MainFactory(Device()),
