@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { IMainFactory, IProps } from './useEasyPagination.types'
+import { IProps } from './useEasyPagination.types'
 import { existCountSalt } from './functions/existCountSalt'
 import { Device } from './functions/Device'
 import { MainHtml } from './Components/MainHtml'
