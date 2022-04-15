@@ -8,22 +8,25 @@ import { MainFactory } from './functions/MainFactory'
 
 export default function useEasyPagination({
     data, 
-    sliceCell, 
-    sliceDesktop, 
-    sliceTv, 
+    ShowItemsOnMobile,
+    ShowItemsOnDesktop,
+    ShowItemsOnTv, 
     CountPageLimit, 
     arrowWeight, 
     classStyle,
-    CountPages
+    CountPages,
+    sm, 
+    md,
+    lg
 }:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ currentPage, setCurrentPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
     const [ MaxItems ] = useState(data.length)
     const [ Pages, setPages ] = useState([])
-    const [ SliceCell, setSliceCell ] = useState(sliceCell)
-    const [ SliceDesktop, setSliceDesktop ] = useState(sliceDesktop)
-    const [ SliceTv, setSliceTv ] = useState(sliceTv)
+    const [ SliceCell, setSliceCell ] = useState(ShowItemsOnMobile)
+    const [ SliceDesktop, setSliceDesktop ] = useState(ShowItemsOnDesktop)
+    const [ SliceTv, setSliceTv ] = useState(ShowItemsOnTv)
    
     useEffect(() => {
         const w = window.innerWidth
@@ -35,28 +38,33 @@ export default function useEasyPagination({
         Start,
         SliceCell,
         setSliceCell,
-        sliceCell,
+        ShowItemsOnMobile,
         SliceDesktop,
         setSliceDesktop,
-        sliceDesktop,
+        ShowItemsOnDesktop, 
         setCurrentPage,
         currentPage,
-        sliceTv,
+        ShowItemsOnTv, 
         setSliceTv,
         SliceTv,
     }
+
     const DeviceExecuteDependecy = {
         width, 
         MaxItems, 
-        sliceCell, 
+        ShowItemsOnMobile, 
         SliceCell, 
-        sliceDesktop, 
+        ShowItemsOnDesktop, 
         SliceDesktop, 
         data, 
-        sliceTv, 
+        ShowItemsOnTv, 
         SliceTv, 
-        Start
+        Start,
+        CellWidth:sm,
+        DekstopWidth:md,
+        TvWidth:lg
     }
+
     const DeviceDependecy = Device(DeviceExecuteDependecy)
     
 
@@ -69,7 +77,7 @@ if(CountPageLimit) {
                     setPages(prev => prev.includes(currentPage) ? [...Pages]:[...Pages, currentPage])
                 }
 
-            })(Device(DeviceExecuteDependecy));
+            })(DeviceDependecy);
     }, [currentPage])
 }
     
@@ -77,7 +85,7 @@ if(CountPageLimit) {
 
         (function(Device){
             const existWidth = width !== 0
-            const device = Device.device
+            const device = Device['device']
             if(device === 'cell' && existWidth ){
 
                 for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device ); count++) {
@@ -98,7 +106,7 @@ if(CountPageLimit) {
                 }
                
             }
-        })(Device(DeviceExecuteDependecy));
+        })(DeviceDependecy);
         
     }, [width])
     

@@ -3,6 +3,7 @@ import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
 import { posts } from '../../pages/api/posts';
 import useEasyPagination from "../hooks/useEasyPagination/useEasyPagination";
+import { useEffect } from "react";
 
 export default function GetPosts() {
     /*const [posts, setPosts] = useState<T>([])
@@ -17,17 +18,20 @@ export default function GetPosts() {
 
     const { DeviceData, MainHtml} = useEasyPagination({
         data:posts,
-        sliceCell:1,
-        sliceDesktop:3,
-        sliceTv:4,
+        sm:500,
+        md:1200,
+        lg:1301,
+        ShowItemsOnMobile:1,
+        ShowItemsOnDesktop:2,
+        ShowItemsOnTv:4,
         CountPages:true,
         CountPageLimit:{
             cell:1,
-            desktop:3,
-            tv:2
+            desktop:4,
+            tv:3
         }
       })
-      
+
     return(
         <div>
             {MainHtml}

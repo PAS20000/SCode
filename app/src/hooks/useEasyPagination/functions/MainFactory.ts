@@ -1,4 +1,4 @@
-import { IDevice, IMainFactory } from "../useEasyPagination.types"
+import { IDevice, IMainFactory, States } from "../useEasyPagination.types"
 
 export const MainFactory = ( {
     setStart, 
@@ -6,15 +6,15 @@ export const MainFactory = ( {
     setSliceCell, 
     setSliceDesktop, 
     Start,
-    sliceCell,
+    ShowItemsOnMobile,
     SliceCell,
     currentPage,
     SliceDesktop,
-    sliceDesktop,
-    sliceTv,
+    ShowItemsOnDesktop,
+    ShowItemsOnTv,
     SliceTv,
     setSliceTv
-},
+}:States,
 { device, lastPage, slice, Data }:IDevice,
    
     ):IMainFactory => {
@@ -24,19 +24,19 @@ export const MainFactory = ( {
         return {
             DeviceName: device,
             ReturnPage: () => { 
-                setStart(Start - sliceCell)
-                setSliceCell(SliceCell - sliceCell)
+                setStart(Start - ShowItemsOnMobile)
+                setSliceCell(SliceCell - ShowItemsOnMobile)
                 setCurrentPage(currentPage - 1)
             },
             NextPage:() => {
-                setStart(Start + sliceCell)
-                setSliceCell(sliceCell + SliceCell)
+                setStart(Start + ShowItemsOnMobile)
+                setSliceCell(ShowItemsOnMobile + SliceCell)
                 setCurrentPage(currentPage + 1)
             },
             ExactPage:(pg:number) => {
                 setCurrentPage(pg)
                 setSliceCell(pg)
-                setStart(pg - sliceCell)
+                setStart(pg - ShowItemsOnMobile)
             },
             DeviceSlice: slice,
             DeviceData: Data,
@@ -48,19 +48,19 @@ export const MainFactory = ( {
         return {
             DeviceName:device,
             ReturnPage: () => {
-                setStart(Start - sliceDesktop)
-                setSliceDesktop(SliceDesktop - sliceDesktop)
+                setStart(Start - ShowItemsOnDesktop)
+                setSliceDesktop(SliceDesktop - ShowItemsOnDesktop)
                 setCurrentPage(currentPage - 1)
             },
             NextPage: () => {
-                setStart(Start + sliceDesktop)
-                setSliceDesktop(sliceDesktop + SliceDesktop)
+                setStart(Start + ShowItemsOnDesktop)
+                setSliceDesktop(ShowItemsOnDesktop + SliceDesktop)
                 setCurrentPage(currentPage + 1)
             },
             ExactPage: (pg:number) => {
                 setCurrentPage(pg)
-                setSliceDesktop(pg * sliceDesktop)
-                setStart(sliceDesktop * (pg - 1))
+                setSliceDesktop(pg * ShowItemsOnDesktop)
+                setStart(ShowItemsOnDesktop * (pg - 1))
             },
             DeviceSlice: slice,
             DeviceData:Data,
@@ -72,19 +72,19 @@ export const MainFactory = ( {
         return {
             DeviceName:device,
             ReturnPage:() => {
-                setStart(Start - sliceTv)
-                setSliceTv(SliceTv - sliceTv)
+                setStart(Start - ShowItemsOnTv)
+                setSliceTv(SliceTv - ShowItemsOnTv)
                 setCurrentPage(currentPage - 1)
             },
             NextPage:() => {
-                setStart(Start + sliceTv)
-                setSliceTv(sliceTv + SliceTv)
+                setStart(Start + ShowItemsOnTv)
+                setSliceTv(ShowItemsOnTv + SliceTv)
                 setCurrentPage(currentPage + 1)
             },
             ExactPage:(pg:number) => {
                 setCurrentPage(pg)
-                setSliceTv(pg * sliceTv)
-                setStart(sliceTv * (pg - 1))
+                setSliceTv(pg * ShowItemsOnTv)
+                setStart(ShowItemsOnTv * (pg - 1))
             },
             DeviceSlice: slice,
             DeviceData:Data,
