@@ -5,7 +5,7 @@
 }
 .default:hover {
     transition: 1s;
-    color: #B794F4;
+    color: cyan;
 }
 .disabled{
     width:30px;
@@ -15,28 +15,93 @@
     color: transparent;
 }
 .select{
-    color: #B794F4;
+    color: cyan;
     width:30px;
     height:30px;
     margin-left: 5px;
     pointer-events: none;
 }
 
-
 .orangeCircle {
-    margin-left: 5px;
+    transition: 1s;
     background-color:orange;
+    margin-left: 5px;
     border-radius:50%;
     width:30px;
     height:30px;
 }
-
+.orangeCirclePages{
+    width:30px;
+    height:30px;
+    margin-left: 5px;
+}
+.orangeCirclePages:hover{
+    transition: 1s;
+    background-color:gray;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
 .orangeCircle:hover{
     transition: 1s;
     background-color: gray;
 }
 
+.purpleCircle {
+    transition: 1s;
+    background-color:purple;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
+.purpleCirclePages{
+    width:30px;
+    height:30px;
+    margin-left: 5px;
+}
+.purpleCirclePages:hover{
+    transition: 1s;
+    background-color:gray;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
+.purpleCircle:hover{
+    transition: 1s;
+    background-color: gray;
+}
+
+.blueCircle {
+    transition: 1s;
+    background-color:blue;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
+.blueCirclePages{
+    width:30px;
+    height:30px;
+    margin-left: 5px;
+}
+.blueCirclePages:hover{
+    transition: 1s;
+    background-color:gray;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
+.blueCircle:hover{
+    transition: 1s;
+    background-color: gray;
+}
+
 .redCircle {
+    transition: 1s;
     background-color:red;
     margin-left: 5px;
     border-radius:50%;
@@ -44,19 +109,49 @@
     height:30px;
 }
 
+.redCircle:hover{
+    transition: 1s;
+    background-color: gray;
+}
+
 .redCirclePages{
-    color:white;
     width:30px;
     height:30px;
     margin-left: 5px;
 }
-
 .redCirclePages:hover{
     transition: 1s;
-    color: red;
+    background-color:gray;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
 }
 
-.redCircle:hover{
+.greenCircle {
+    transition: 1s;
+    background-color:green;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+}
+
+.greenCircle:hover{
     transition: 1s;
     background-color: gray;
+}
+
+.greenCirclePages{
+    width:30px;
+    height:30px;
+    margin-left: 5px;
+}
+.greenCirclePages:hover{
+    transition: 1s;
+    background-color:gray;
+    margin-left: 5px;
+    border-radius:50%;
+    width:30px;
+    height:30px;
 }

@@ -1,5 +1,5 @@
+import { CssInject } from '../functions/CssInJect'
 import { IMainFactory, IMainHtmlProps } from '../useEasyPagination.types'
-import css from './MainHtml.module.css'
 
 const Arrows = {
     right:{100:'🡢',200:'🡪', 300:'🡲', 400:'🡺',500:'🢂'},
@@ -22,29 +22,7 @@ export const MainHtml = (
     DeviceSlice,
 }:IMainFactory) => {
 
-    const cssInject = (pg?:number) => {
-
-        if(classStyle === 'redCircle'){
-            
-            const PagesCard = currentPage === pg  ? css['redCircle'] : css['redCirclePages']
-            const Buttons = css['redCircle']
-
-            return {
-                Buttons,
-                PagesCard
-            }
-        }
-
-        const PagesCard = currentPage === pg  ? css['select'] : css['default']
-        const Buttons = css['default']
-
-        return {
-            Buttons,
-            PagesCard
-        }
-    }
-
-    const {  Buttons, PagesCard } = cssInject()
+    const {  Buttons, PagesCard } = CssInject(classStyle, currentPage)
 
     return(
        <div>
@@ -56,7 +34,7 @@ export const MainHtml = (
            </button>
            {!CountPages ?
                <span>
-                   <span className={css['select']}>
+                   <span className={PagesCard}>
                        {currentPage}
                    </span>
                    <span>
@@ -65,7 +43,7 @@ export const MainHtml = (
                </span>
                :
                Pages.map((pg, index) => 
-               <button key={index} className={cssInject(pg).PagesCard} onClick={() => ExactPage(pg)}>
+               <button id={'pages'} key={index} className={CssInject(classStyle, currentPage, pg).PagesCard} onClick={() => ExactPage(pg)}>
                    {pg}
                </button>)
            }

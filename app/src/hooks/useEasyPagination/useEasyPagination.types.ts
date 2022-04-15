@@ -26,7 +26,7 @@ export type States = {
 
 type Range = [100,200,300,400,500]
 
-type Styles = ['default','redCircle', 'orangeCircle']
+export type Styles = ['default','redCircle', 'orangeCircle', 'blueCircle', 'purpleCircle', 'greenCircle']
 
 export type Devices = {
     width:number

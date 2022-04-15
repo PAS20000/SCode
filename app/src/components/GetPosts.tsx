@@ -21,7 +21,7 @@ export default function GetPosts() {
         sm:500,
         md:1200,
         lg:1301,
-        classStyle:'redCircle',
+        classStyle:'purpleCircle',
         ShowItemsOnMobile:1,
         ShowItemsOnDesktop:2,
         ShowItemsOnTv:4,
