@@ -60,7 +60,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
 
     const Device = ():IDevice => {
         const cell = cellWidth ? cellWidth:500
-        const desktop = tvWidth ? tvWidth:1300 && width > cell
+        const desktop = desktopWidth ? desktopWidth:1200
         const tv = tvWidth ? tvWidth:1300
     
         if(width < cell){
@@ -75,7 +75,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                 Data
             }
         }
-        if(width < desktop){
+        if(width < desktop && width < tv){
             const lastPage = Math.ceil(MaxItems / sliceDesktop)
             const slice = `slice(${Start}-${SliceDesktop})`
             const Data = data.slice(Start, SliceDesktop)
