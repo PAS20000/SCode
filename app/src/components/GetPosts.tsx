@@ -23,7 +23,7 @@ export default function GetPosts() {
         CountPages:true,
         CountPageLimit:{
             cell:1,
-            desktop:20,
+            desktop:3,
             tv:2
         }
       })
