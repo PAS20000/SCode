@@ -89,7 +89,7 @@ if(CountPageLimit) {
             const device = Device['device']
             if(device === 'cell' && existWidth ){
 
-                for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device ); count++) {
+                for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
