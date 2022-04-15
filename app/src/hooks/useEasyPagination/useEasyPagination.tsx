@@ -104,43 +104,47 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
         }
     }
     const existCountSalt = (deviceType:string, lastPage:number):number | any => {
-        if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
-            return alert(
-                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}, DataLength: ${MaxItems}`
-            )
-        }
-        if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
-            return alert(
-                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}, DataLength: ${MaxItems}`
-            )
-        }
-        if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
-            return alert(
-                `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}, DataLength: ${MaxItems}`
-            )
-        }
-        if(deviceType === 'cell'){
-            return CountPageLimit.cell
-        }
-        if(deviceType === 'desktop'){
-            return CountPageLimit.desktop
-        }
-        if(deviceType === 'tv'){
-            return CountPageLimit.tv
-        }
+    if(CountPageLimit){
+            if(deviceType === 'cell' && CountPageLimit.cell > lastPage){
+                return alert(
+                    `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}, DataLength: ${MaxItems}`
+                )
+            }
+            if(deviceType === 'desktop' && CountPageLimit.desktop > lastPage){
+                return alert(
+                    `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}, DataLength: ${MaxItems}`
+                )
+            }
+            if(deviceType === 'tv' && CountPageLimit.tv > lastPage){
+                return alert(
+                    `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}, DataLength: ${MaxItems}`
+                )
+            }
+            if(deviceType === 'cell'){
+                return CountPageLimit.cell
+            }
+            if(deviceType === 'desktop'){
+                return CountPageLimit.desktop
+            }
+            if(deviceType === 'tv'){
+                return CountPageLimit.tv
+            }
 
-        return alert('Unexpected error')
+            return alert('Unexpected error')
+        } else {
+            return lastPage
+        }
     }
 
     useMemo(() => {
+        if(CountPageLimit) {
+            (function({ device,lastPage }){
+                if(Page > existCountSalt(device, lastPage)){
+                    setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages, Page])
+                }
 
-        (function({ device,lastPage }){
-            if(Page > existCountSalt(device, lastPage)){
-                setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages, Page])
-            }
-
-        })(Device());
-
+            })(Device());
+        }
     }, [Page])
   
     useMemo(() => {
