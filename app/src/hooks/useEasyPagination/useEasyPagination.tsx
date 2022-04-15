@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import css from './useStaticPagination.module.css'
+import css from './useEasyPagination.module.css'
 
 
 interface IMainFactory {
@@ -41,7 +41,7 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
-export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
+export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ width, setWidth ] = useState(0)

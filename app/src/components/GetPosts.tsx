@@ -2,7 +2,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
 import { posts } from '../../pages/api/posts';
-import useStaticPagination from "../hooks/useStaticPagination/useStaticPagination";
+import useEasyPagination from "../hooks/useEasyPagination/useEasyPagination";
 
 export default function GetPosts() {
     /*const [posts, setPosts] = useState<T>([])
@@ -15,7 +15,7 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { DeviceData, MainHtml, Result} = useStaticPagination({
+    const { DeviceData, MainHtml, Result} = useEasyPagination({
         data:posts,
         sliceCell:1,
         sliceDesktop:3,
