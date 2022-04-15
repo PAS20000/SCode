@@ -48,7 +48,7 @@ const Arrows = {
 
 export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle, CountPageLimit}:IProps) {
     const [ Start, setStart ] = useState(0)
-    const [ Page, setPage ] = useState(1)
+    const [ currentPage, setCurrentPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
     const [ MaxItems ] = useState(data.length)
     const [ Pages, setPages ] = useState([])
@@ -141,14 +141,14 @@ if(CountPageLimit) {
         
             (function({ device,lastPage }){
                
-                if(Page > existCountSalt(device, lastPage)){
-                    setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages, Page])
+                if(currentPage > existCountSalt(device, lastPage)){
+                    setPages(prev => prev.includes(currentPage) ? [...Pages]:[...Pages, currentPage])
                 }
 
 
                
             })(Device());
-    }, [Page])
+    }, [currentPage])
 }
     console.log(Pages)
     useMemo(() => {
@@ -189,15 +189,15 @@ if(CountPageLimit) {
                 ReturnPage: () => { 
                     setStart(Start - sliceCell)
                     setSliceCell(SliceCell - sliceCell)
-                    setPage(Page - 1)
+                    setCurrentPage(currentPage - 1)
                 },
                 NextPage:() => {
                     setStart(Start + sliceCell)
                     setSliceCell(sliceCell + SliceCell)
-                    setPage(Page + 1)
+                    setCurrentPage(currentPage + 1)
                 },
                 ExactPage:(pg:number) => {
-                    setPage(pg)
+                    setCurrentPage(pg)
                     setSliceCell(pg)
                     setStart(pg - sliceCell)
                 },
@@ -213,15 +213,15 @@ if(CountPageLimit) {
                 ReturnPage: () => {
                     setStart(Start - sliceDesktop)
                     setSliceDesktop(SliceDesktop - sliceDesktop)
-                    setPage(Page - 1)
+                    setCurrentPage(currentPage - 1)
                 },
                 NextPage: () => {
                     setStart(Start + sliceDesktop)
                     setSliceDesktop(sliceDesktop + SliceDesktop)
-                    setPage(Page + 1)
+                    setCurrentPage(currentPage + 1)
                 },
                 ExactPage: (pg:number) => {
-                    setPage(pg)
+                    setCurrentPage(pg)
                     setSliceDesktop(pg * sliceDesktop)
                     setStart(sliceDesktop * (pg - 1))
                 },
@@ -237,15 +237,15 @@ if(CountPageLimit) {
                 ReturnPage:() => {
                     setStart(Start - sliceTv)
                     setSliceTv(SliceTv - sliceTv)
-                    setPage(Page - 1)
+                    setCurrentPage(currentPage - 1)
                 },
                 NextPage:() => {
                     setStart(Start + sliceTv)
                     setSliceTv(sliceTv + SliceTv)
-                    setPage(Page + 1)
+                    setCurrentPage(currentPage + 1)
                 },
                 ExactPage:(pg:number) => {
-                    setPage(pg)
+                    setCurrentPage(pg)
                     setSliceTv(pg * sliceTv)
                     setStart(sliceTv * (pg - 1))
                 },
@@ -263,7 +263,7 @@ if(CountPageLimit) {
  const MainHtml = ({CountPages}:MainHtmlProps) => {
      return(
         <div>
-            <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Page === 1 ? css['disabled']: css[classStyle ?? 'default']}>
+            <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={currentPage === 1 ? css['disabled']: css[classStyle ?? 'default']}>
                 <span>
                     {Arrows.left[arrowWeight ?? 100]}
                 </span>
@@ -271,7 +271,7 @@ if(CountPageLimit) {
             {!CountPages ?
                 <span>
                     <span className={css['select']}>
-                        {Page}
+                        {currentPage}
                     </span>
                     <span>
                         -{DeviceLastPage}
@@ -279,11 +279,11 @@ if(CountPageLimit) {
                 </span>
                 :
                 Pages.map((pg, index) => 
-                <button key={index} className={Page === pg  ? css['select']:css['default']} onClick={() => ExactPage(pg)}>
+                <button key={index} className={currentPage === pg  ? css['select']:css['default']} onClick={() => ExactPage(pg)}>
                     {pg}
                 </button>)
             }
-            <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
+            <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={currentPage === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
                 <span>
                     {Arrows.right[arrowWeight ?? 100]}
                 </span>
@@ -297,11 +297,13 @@ if(CountPageLimit) {
         DeviceName,
         DeviceSlice,
         Start, 
-        Page,
-        NextPage,
-        ReturnPage,
+        currentPage,
+        Pages,
         DeviceData,
         DeviceLastPage,
+        NextPage: () => NextPage(),
+        ReturnPage:() => ReturnPage(),
+        ExactPage:(pg:number) => ExactPage(pg),
         MainHtml,
     }
 }
