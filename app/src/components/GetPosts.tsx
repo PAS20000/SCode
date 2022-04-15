@@ -16,11 +16,21 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { DeviceData, MainHtml} = useEasyPagination({
+    const { DeviceData, MainHtml } = useEasyPagination({
+        customStyle:{
+            Buttons:{
+               color:'red'
+            },
+            PagesCard:{
+               color:'red',
+               width: '40px',
+            }
+        },
         data:posts,
         sm:500,
         md:1200,
         lg:1301,
+        classStyle:'redCircle',
         ShowItemsOnMobile:1,
         ShowItemsOnDesktop:2,
         ShowItemsOnTv:4,

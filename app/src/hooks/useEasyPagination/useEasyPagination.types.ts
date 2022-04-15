@@ -58,7 +58,20 @@ export interface IMainHtmlProps {
     Pages:Array<number>
 }
 
+type Style = {
+    color?:string
+    width?:number | string
+    height?:number | string
+    marginLeft?:number | string
+}
+
+type classNames = {
+    Buttons:Style
+    PagesCard:Style
+}
+
 export interface IProps {
+    customStyle?:classNames
     data:Array<any>
     ShowItemsOnMobile:number
     ShowItemsOnDesktop:number

@@ -17,7 +17,8 @@ export default function useEasyPagination({
     CountPages,
     sm, 
     md,
-    lg
+    lg,
+    customStyle
 }:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ currentPage, setCurrentPage ] = useState(1)
@@ -78,6 +79,7 @@ if(CountPageLimit) {
                 }
 
             })(DeviceDependecy);
+
     }, [currentPage])
 }
     
@@ -106,6 +108,7 @@ if(CountPageLimit) {
                 }
                
             }
+
         })(DeviceDependecy);
         
     }, [width])
@@ -123,7 +126,9 @@ if(CountPageLimit) {
         NextPage: () => currentPage === DeviceLastPage ? () => {}:NextPage(),
         ReturnPage:() => currentPage === 1 ? () => {}:ReturnPage(),
         ExactPage:(pg:number) => ExactPage(pg),
-        MainHtml:MainHtml({
+        MainHtml:MainHtml(
+            customStyle,
+        {
             CountPages,
             Pages,
             arrowWeight,

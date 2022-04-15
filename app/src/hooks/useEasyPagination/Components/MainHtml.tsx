@@ -6,7 +6,9 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
-export const MainHtml = ({
+export const MainHtml = (
+    customStyle,
+{
     currentPage, 
     classStyle, 
     arrowWeight, 
@@ -21,9 +23,34 @@ export const MainHtml = ({
     DeviceSlice,
 }:IMainFactory) => {
 
+    const cssInject = (pg?:number) => {
+        if(customStyle){
+           return customStyle
+        }
+        if(classStyle === 'redCircle'){
+            const PagesCard = currentPage === pg  ? css['redCircle'] : css['redCirclePages']
+            const Buttons = css['redCircle']
+
+            return {
+                Buttons,
+                PagesCard
+            }
+        }
+
+        const PagesCard = currentPage === pg  ? css['select'] : css['default']
+        const Buttons = css['default']
+
+        return {
+            Buttons,
+            PagesCard
+        }
+    }
+
+    const {  Buttons, PagesCard } = cssInject()
+
     return(
        <div>
-           <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={currentPage === 1 ? css['disabled']: css[classStyle ?? 'default']}>
+           <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Buttons} style={customStyle ? Buttons:{}}>
                <span>
                    {Arrows.left[arrowWeight ?? 100]}
                </span>
@@ -39,11 +66,11 @@ export const MainHtml = ({
                </span>
                :
                Pages.map((pg, index) => 
-               <button key={index} className={currentPage === pg  ? css['select']:css['default']} onClick={() => ExactPage(pg)}>
+               <button key={index} className={cssInject(pg).PagesCard} onClick={() => ExactPage(pg)} style={customStyle ? PagesCard:{}}>
                    {pg}
                </button>)
            }
-           <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={currentPage === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
+           <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Buttons} style={customStyle ? Buttons:{}}>
                <span>
                    {Arrows.right[arrowWeight ?? 100]}
                </span>
