@@ -1,14 +1,28 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, Center, SimpleGrid } from '@chakra-ui/react';
 import { services } from '../../pages/api/services'
+import useEasyPagination from '../hooks/useEasyPagination/useEasyPagination';
 import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
 
 export default function Serives() {
+    const { DeviceData, MainHtml } = useEasyPagination({
+        data:services,
+        classStyle:'orangeCircle',
+        ShowItemsOnMobile:2,
+        ShowItemsOnDesktop:4,
+        ShowItemsOnTv:5,
+        CountPages:true,
+        CountPageLimit:{
+            cell:1,
+            desktop:4,
+            tv:3
+        }
+      })
     return(
         <Box>
             <CustomHeading  text={'Nossos Serviços'} />
             <SimpleGrid columns={5}>
-            {services.map(service => <PostCard 
+            {DeviceData.map(service => <PostCard 
                 key={service.id}
                 postDate={''} 
                 postDescription={service.description} 
@@ -19,6 +33,9 @@ export default function Serives() {
                 post_id={service.id}
             />)}
           </SimpleGrid>
+          <Center>
+            {MainHtml}
+          </Center>
         </Box>
     )
 }

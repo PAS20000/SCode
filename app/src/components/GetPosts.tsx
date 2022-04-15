@@ -1,9 +1,8 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { Center, SimpleGrid } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
 import { posts } from '../../pages/api/posts';
 import useEasyPagination from "../hooks/useEasyPagination/useEasyPagination";
-import { useEffect } from "react";
 
 export default function GetPosts() {
     /*const [posts, setPosts] = useState<T>([])
@@ -18,9 +17,6 @@ export default function GetPosts() {
 
     const { DeviceData, MainHtml } = useEasyPagination({
         data:posts,
-        sm:500,
-        md:1200,
-        lg:1301,
         classStyle:'purpleCircle',
         ShowItemsOnMobile:1,
         ShowItemsOnDesktop:2,
@@ -35,7 +31,6 @@ export default function GetPosts() {
 
     return(
         <div>
-            {MainHtml}
             <CustomHeading text={'Postagens da Scode'}/>
             <SimpleGrid columns={{base:1, md:3, lg:4}} spacing={4}>
             {DeviceData.map(post => <PostCard 
@@ -49,6 +44,9 @@ export default function GetPosts() {
                 postDetails={post.details}
             /> )}
             </SimpleGrid>
+            <Center>
+                {MainHtml}
+            </Center>
         </div>
     )
 }
