@@ -15,7 +15,7 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { DeviceData, MainHtml, Result} = useEasyPagination({
+    const { DeviceData, MainHtml} = useEasyPagination({
         data:posts,
         sliceCell:1,
         sliceDesktop:3,
@@ -26,8 +26,7 @@ export default function GetPosts() {
             tv:2
         },
       })
-
-    console.log(Result)
+      
     return(
         <div>
             <MainHtml CountPages={true}/>

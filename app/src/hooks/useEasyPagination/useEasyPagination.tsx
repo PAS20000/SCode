@@ -136,17 +136,21 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
         }
     }
 
+if(CountPageLimit) {
     useMemo(() => {
-        if(CountPageLimit) {
+        
             (function({ device,lastPage }){
+               
                 if(Page > existCountSalt(device, lastPage)){
                     setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages, Page])
                 }
 
+
+               
             })(Device());
-        }
     }, [Page])
-  
+}
+    console.log(Pages)
     useMemo(() => {
 
         (function({ device, lastPage }){
