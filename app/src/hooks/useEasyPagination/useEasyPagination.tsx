@@ -136,9 +136,9 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
 
         (function({ device,lastPage }){
             if(Page > existCountSalt(device, lastPage)){
-                setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages,Page])
+                setPages(prev => prev.includes(Page) ? [...Pages]:[...Pages, Page])
             }
-            
+
         })(Device());
 
     }, [Page])
@@ -248,7 +248,7 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
         }
     }
 
-    const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory(Device())
+    const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage, ExactPage } = MainFactory(Device())
 
     
 
@@ -271,7 +271,7 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
                 </span>
                 :
                 Pages.map((pg, index) => 
-                <button key={index} className={Page === pg  ? css['select']:css['default']} onClick={() => MainFactory(Device()).ExactPage(pg)}>
+                <button key={index} className={Page === pg  ? css['select']:css['default']} onClick={() => ExactPage(pg)}>
                     {pg}
                 </button>)
             }
