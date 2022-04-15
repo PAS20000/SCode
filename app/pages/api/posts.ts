@@ -17,7 +17,7 @@ const createdAt = new Date().toLocaleDateString()
 
 export const posts = [{
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 1',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -25,7 +25,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 2',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -33,7 +33,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 3',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -41,7 +41,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 4',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -49,7 +49,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 5',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -57,7 +57,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 6',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -65,7 +65,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 7',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -73,7 +73,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 8',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -81,7 +81,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 9',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',
@@ -89,7 +89,7 @@ export const posts = [{
     createdAt
 }, {
     id: crypto.randomBytes(32).toString('hex'),
-    title:'post',
+    title:'post 10',
     description:lorem + lorem + lorem,
     details:lorem,
     image:'/img/build.jpg',

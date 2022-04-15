@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
 import PostCard from "./PostCard";
-import { posts } from '../../pages/api/posts'
+import { posts } from '../../pages/api/posts';
 import useStaticPagination from "../hooks/useStaticPagination/useStaticPagination";
 
 export default function GetPosts() {
@@ -15,13 +15,14 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { DeviceData, MainHtml} = useStaticPagination({
+    const { DeviceData, MainHtml, Result} = useStaticPagination({
         data:posts,
         sliceCell:1,
         sliceDesktop:3,
         sliceTv:4,
       })
-    
+
+    console.log(Result)
     return(
         <div>
             <MainHtml CountPages={true}/>

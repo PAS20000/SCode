@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import css from './useStaticPagination.module.css'
 
 
@@ -6,7 +6,8 @@ interface IMainFactory {
     DeviceName:string,
     ReturnPage: Function
     NextPage: Function
-    DeviceSlice: string,
+    ExactPage:Function
+    DeviceSlice: string
     DeviceData: Array<any>
     DeviceLastPage:number
 }
@@ -49,7 +50,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
     const [ SliceCell, setSliceCell ] = useState(sliceCell)
     const [ SliceDesktop, setSliceDesktop ] = useState(sliceDesktop)
     const [ SliceTv, setSliceTv ] = useState(sliceTv)
-
+   
     useEffect(() => {
         const w = window.innerWidth
         setWidth(w)
@@ -141,6 +142,11 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setSliceCell(sliceCell + SliceCell)
                     setPage(Page + 1)
                 },
+                ExactPage:(pg:number) => {
+                    setPage(pg)
+                    setSliceCell(pg)
+                    setStart(pg - sliceCell)
+                },
                 DeviceSlice: slice,
                 DeviceData: Data,
                 DeviceLastPage: lastPage,
@@ -155,10 +161,15 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setSliceDesktop(SliceDesktop - sliceDesktop)
                     setPage(Page - 1)
                 },
-                NextPage:() => {
+                NextPage: () => {
                     setStart(Start + sliceDesktop)
                     setSliceDesktop(sliceDesktop + SliceDesktop)
                     setPage(Page + 1)
+                },
+                ExactPage: (pg:number) => {
+                    setPage(pg)
+                    setSliceDesktop(pg * sliceDesktop)
+                    setStart(sliceDesktop * (pg - 1))
                 },
                 DeviceSlice: slice,
                 DeviceData:Data,
@@ -178,6 +189,11 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                     setStart(Start + sliceTv)
                     setSliceTv(sliceTv + SliceTv)
                     setPage(Page + 1)
+                },
+                ExactPage:(pg:number) => {
+                    setPage(pg)
+                    setSliceTv(pg * sliceTv)
+                    setStart(sliceTv * (pg - 1))
                 },
                 DeviceSlice: slice,
                 DeviceData:Data,
@@ -207,7 +223,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
                 </span>
                 :
                 Pages.map((pg, index) => 
-                <button key={index}>
+                <button key={index} className={Page === pg  ? css['select']:css['default']} onClick={() => MainFactory(Device()).ExactPage(pg)}>
                     {pg}
                 </button>)
             }
