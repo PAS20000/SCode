@@ -14,14 +14,14 @@ export default function Serives() {
         CountPages:true,
         CountPageLimit:{
             cell:1,
-            desktop:4,
+            desktop:3,
             tv:3
         }
       })
     return(
         <Box>
             <CustomHeading  text={'Nossos Serviços'} />
-            <SimpleGrid columns={5}>
+            <SimpleGrid columns={{base:2, md:4, lg:5}}>
             {DeviceData.map(service => <PostCard 
                 key={service.id}
                 postDate={''} 
