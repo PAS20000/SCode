@@ -20,16 +20,17 @@ export default function GetPosts() {
         sliceCell:1,
         sliceDesktop:3,
         sliceTv:4,
+        CountPages:true,
         CountPageLimit:{
-            cell:5,
-            desktop:3,
+            cell:1,
+            desktop:20,
             tv:2
-        },
+        }
       })
       
     return(
         <div>
-            <MainHtml CountPages={true}/>
+            {MainHtml}
             <CustomHeading text={'Postagens da Scode'}/>
             <SimpleGrid columns={{base:1, md:3, lg:4}} spacing={4}>
             {DeviceData.map(post => <PostCard 
