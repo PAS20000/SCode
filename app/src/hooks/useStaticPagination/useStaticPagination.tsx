@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import css from './useStaticPagination.module.css'
 
 
@@ -15,12 +15,16 @@ type Range = [100,200,300,400,500]
 
 type Styles = ['default','redCircle', 'orangeCircle']
 
-interface IProps<T> {
-    data:Array<T>
+type MainHtmlProps = {
+    CountPages?:boolean
+}
+
+interface IProps {
+    data:Array<any>
     sliceCell:number
     sliceDesktop:number
     sliceTv:number
-    arrowWeight:Range[number]
+    arrowWeight?:Range[number]
     classStyle?:Styles[number]
 }
 
@@ -37,25 +41,25 @@ const Arrows = {
 }
 
 
-
-export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps<Object>) {
-    const [ width, setWidth] = useState(0)
+export default function useStaticPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
+    const [ width, setWidth ] = useState(0)
     const [ MaxItems ] = useState(data.length)
+    const [ Pages, setPages ] = useState([])
     const [ SliceCell, setSliceCell ] = useState(sliceCell)
     const [ SliceDesktop, setSliceDesktop ] = useState(sliceDesktop)
     const [ SliceTv, setSliceTv ] = useState(sliceTv)
 
     useEffect(() => {
         const w = window.innerWidth
-        
         setWidth(w)
-    }, [])
+    },[])
 
     const Device = ():IDevice => {
    
         if(width < 500){
+           
             const lastPage = Math.ceil(MaxItems / sliceCell)
             const slice = `slice(${Start}-${SliceCell})`
               
@@ -93,6 +97,32 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
             }
         }
     }
+    useEffect(() => {
+       
+        (function({ device, lastPage }){
+
+            if(device === 'cell' && width !== 0){
+                
+                for ( let count = 1; count - 1 < lastPage; count++) {
+                    setPages(prev => [...prev,count])
+                }
+            }
+            if(device === 'desktop'&& width !== 0){
+    
+                for ( let count = 1; count - 1 < lastPage; count++) {
+                    setPages(prev => [...prev,count])
+                }
+            } 
+            if(device === 'tv'&& width !== 0) {
+                
+                for ( let count = 1; count - 1 < lastPage; count++) {
+                    setPages(prev => [...prev,count])
+                }
+            }
+        })(Device());
+        
+    }, [width])
+    
 
     const MainFactory = ():IMainFactory => {
         const { device, lastPage, slice, Data } = Device()
@@ -158,24 +188,32 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
 
     const { DeviceData, DeviceLastPage, DeviceName, DeviceSlice, NextPage, ReturnPage } = MainFactory()
 
- const MainHtml = () =>{
+ const MainHtml = ({CountPages}:MainHtmlProps) => {
      return(
         <div>
             <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Page === 1 ? css['disabled']: css[classStyle ?? 'default']}>
                 <span>
-                    {Arrows.left[arrowWeight]}
+                    {Arrows.left[arrowWeight ?? 100]}
                 </span>
             </button>
-                <span className={css['select']}>
-                    {Page}
-                </span>
-                
+            {!CountPages ?
                 <span>
-                    {'-' + DeviceLastPage}
+                    <span className={css['select']}>
+                        {Page}
+                    </span>
+                    <span>
+                        -{DeviceLastPage}
+                    </span>
                 </span>
+                :
+                Pages.map((pg, index) => 
+                <button key={index}>
+                    {pg}
+                </button>)
+            }
             <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Page === DeviceLastPage ? css['disabled']:css[classStyle ?? 'default']}>
                 <span>
-                    {Arrows.right[arrowWeight]}
+                    {Arrows.right[arrowWeight ?? 100]}
                 </span>
             </button>
         </div>
@@ -193,6 +231,6 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
         ReturnPage,
         DeviceData,
         DeviceLastPage,
-        MainHtml
+        MainHtml,
     }
 }

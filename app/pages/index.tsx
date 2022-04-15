@@ -5,8 +5,6 @@ import GetPosts from "../src/components/GetPosts"
 import Nav from "../src/components/Nav"
 
 
-
-
 function Home(){
 
     return(

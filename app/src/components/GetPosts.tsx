@@ -5,7 +5,7 @@ import { posts } from '../../pages/api/posts'
 import useStaticPagination from "../hooks/useStaticPagination/useStaticPagination";
 
 export default function GetPosts() {
-    /*const [posts, setPosts] = useState([])
+    /*const [posts, setPosts] = useState<T>([])
 
     useEffect(() => {
         (async function() {
@@ -15,21 +15,17 @@ export default function GetPosts() {
         })();
     }, [])*/
 
-    const { DeviceData, MainHtml } = 
-    
-    useStaticPagination({
-        data:posts, 
-        sliceCell:1, 
-        sliceDesktop:3, 
+    const { DeviceData, MainHtml} = useStaticPagination({
+        data:posts,
+        sliceCell:1,
+        sliceDesktop:3,
         sliceTv:4,
-        classStyle:'default',
-        arrowWeight:100
-    })
-
+      })
+    
     return(
         <div>
+            <MainHtml CountPages={true}/>
             <CustomHeading text={'Postagens da Scode'}/>
-                <MainHtml />
             <SimpleGrid columns={{base:1, md:3, lg:4}} spacing={4}>
             {DeviceData.map(post => <PostCard 
                 key={post.id} 
