@@ -97,7 +97,7 @@ export default function useStaticPagination({data, sliceCell, sliceDesktop, slic
             }
         }
     }
-    useEffect(() => {
+    useMemo(() => {
 
         (function({ device, lastPage }){
             const existWidth = width !== 0
