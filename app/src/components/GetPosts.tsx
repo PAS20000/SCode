@@ -17,15 +17,6 @@ export default function GetPosts() {
     }, [])*/
 
     const { DeviceData, MainHtml } = useEasyPagination({
-        customStyle:{
-            Buttons:{
-               color:'red'
-            },
-            PagesCard:{
-               color:'red',
-               width: '40px',
-            }
-        },
         data:posts,
         sm:500,
         md:1200,

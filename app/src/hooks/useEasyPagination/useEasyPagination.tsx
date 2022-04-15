@@ -17,8 +17,7 @@ export default function useEasyPagination({
     CountPages,
     sm, 
     md,
-    lg,
-    customStyle
+    lg
 }:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ currentPage, setCurrentPage ] = useState(1)
@@ -127,7 +126,6 @@ if(CountPageLimit) {
         ReturnPage:() => currentPage === 1 ? () => {}:ReturnPage(),
         ExactPage:(pg:number) => ExactPage(pg),
         MainHtml:MainHtml(
-            customStyle,
         {
             CountPages,
             Pages,

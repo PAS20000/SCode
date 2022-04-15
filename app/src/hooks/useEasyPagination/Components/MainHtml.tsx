@@ -7,7 +7,6 @@ const Arrows = {
 }
 
 export const MainHtml = (
-    customStyle,
 {
     currentPage, 
     classStyle, 
@@ -24,10 +23,9 @@ export const MainHtml = (
 }:IMainFactory) => {
 
     const cssInject = (pg?:number) => {
-        if(customStyle){
-           return customStyle
-        }
+
         if(classStyle === 'redCircle'){
+            
             const PagesCard = currentPage === pg  ? css['redCircle'] : css['redCirclePages']
             const Buttons = css['redCircle']
 
@@ -50,7 +48,8 @@ export const MainHtml = (
 
     return(
        <div>
-           <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Buttons} style={customStyle ? Buttons:{}}>
+           <button style={{background:'red'}}></button>
+           <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Buttons}>
                <span>
                    {Arrows.left[arrowWeight ?? 100]}
                </span>
@@ -66,11 +65,11 @@ export const MainHtml = (
                </span>
                :
                Pages.map((pg, index) => 
-               <button key={index} className={cssInject(pg).PagesCard} onClick={() => ExactPage(pg)} style={customStyle ? PagesCard:{}}>
+               <button key={index} className={cssInject(pg).PagesCard} onClick={() => ExactPage(pg)}>
                    {pg}
                </button>)
            }
-           <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Buttons} style={customStyle ? Buttons:{}}>
+           <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Buttons}>
                <span>
                    {Arrows.right[arrowWeight ?? 100]}
                </span>

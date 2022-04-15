@@ -58,20 +58,38 @@ export interface IMainHtmlProps {
     Pages:Array<number>
 }
 
-type Style = {
+/*type Style = {
     color?:string
+    background?:string
     width?:number | string
     height?:number | string
+    margin?:number | string
     marginLeft?:number | string
+    marginRight?:number | string
+    marginTop?:number | string
+    marginBotton?: number | string
+    padding?:number | string
+    hover?:StyleResume
+}
+type StyleResume = {
+    c?:string
+    bg?:string
+    w?:number | string
+    h?:number | string
+    m?:number | string
+    ml?:number | string
+    mr?:number | string
+    mt?:number | string
+    mb?:number | string
+    p?:number | string
 }
 
-type classNames = {
-    Buttons:Style
-    PagesCard:Style
+export type classNames = {
+    Buttons:Style | StyleResume
+    PagesCard:Style | StyleResume
 }
-
+*/
 export interface IProps {
-    customStyle?:classNames
     data:Array<any>
     ShowItemsOnMobile:number
     ShowItemsOnDesktop:number
