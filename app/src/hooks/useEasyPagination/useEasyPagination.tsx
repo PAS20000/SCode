@@ -26,7 +26,8 @@ interface IProps {
     sliceDesktop:number
     sliceTv:number
     arrowWeight?:Range[number]
-    classStyle?:Styles[number]
+    classStyle?:Styles[number],
+    CountPageLimit?:number
 }
 
 interface IDevice {
@@ -41,7 +42,7 @@ const Arrows = {
     left: {100:'🡠',200:'🡨', 300:'🡰', 400:'🡸', 500:'🢀'}
 }
 
-export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle}:IProps) {
+export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceTv, arrowWeight, classStyle, CountPageLimit}:IProps) {
     const [ Start, setStart ] = useState(0)
     const [ Page, setPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
@@ -102,22 +103,29 @@ export default function useEasyPagination({data, sliceCell, sliceDesktop, sliceT
 
         (function({ device, lastPage }){
             const existWidth = width !== 0
-
+            const existCountSalt = ():number | any => {
+                if(CountPageLimit > lastPage){
+                    return alert(
+                        `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit}, DataLength: ${MaxItems}`
+                    )
+                }
+                return CountPageLimit ? CountPageLimit : lastPage
+            }
             if(device === 'cell' && existWidth ){
                 
-                for ( let count = 1; count - 1 < lastPage; count++) {
+                for ( let count = 1; count - 1 < existCountSalt(); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
             if(device === 'desktop' && existWidth){
     
-                for ( let count = 1; count - 1 < lastPage; count++) {
+                for ( let count = 1; count - 1 < existCountSalt(); count++) {
                     setPages(prev => [...prev,count])
                 }
             } 
             if(device === 'tv'&& existWidth) {
                 
-                for ( let count = 1; count - 1 < lastPage; count++) {
+                for ( let count = 1; count - 1 < existCountSalt(); count++) {
                     setPages(prev => [...prev,count])
                 }
             }
