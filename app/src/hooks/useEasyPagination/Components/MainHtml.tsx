@@ -46,7 +46,7 @@ export const MainHtml = (
                :
                Pages.map((pg, index) => 
                <button id={'pages'} key={index} className={CssInject(classStyle, currentPage, pg).PagesCard} onClick={() => ExactPage(pg)}>
-                   {pg}
+                   {pg}-{DeviceLastPage}
                </button>)
            }
            <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Buttons}>
