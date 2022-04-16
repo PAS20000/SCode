@@ -3,6 +3,8 @@ import { Styles } from '../useEasyPagination.types'
 
 export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:number) => {
 
+const disabled = currentPage === pg ? css['']:css['disabled']
+
     if(classStyle === 'redCircle'){
         
         const PagesCard = currentPage === pg  ? css['redCircle'] : css['redCirclePages']
@@ -10,9 +12,11 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
         return {
             Buttons,
-            PagesCard
+            PagesCard,
+            disabled
         }
     }
+
     if(classStyle === 'greenCircle'){
         
         const PagesCard = currentPage === pg  ? css['greenCircle'] : css['greenCirclePages']
@@ -20,7 +24,9 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
         return {
             Buttons,
-            PagesCard
+            PagesCard,
+            disabled
+
         }
     }
 
@@ -31,7 +37,8 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
         return {
             Buttons,
-            PagesCard
+            PagesCard,
+            disabled
         }
     }
 
@@ -42,7 +49,8 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
         return {
             Buttons,
-            PagesCard
+            PagesCard,
+            disabled
         }
     }
 
@@ -53,7 +61,8 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
         return {
             Buttons,
-            PagesCard
+            PagesCard,
+            disabled
         }
     }
 
@@ -62,6 +71,7 @@ export const CssInject = (classStyle:Styles[number] , currentPage:number, pg?:nu
 
     return {
         Buttons,
-        PagesCard
+        PagesCard,
+        disabled
     }
 }

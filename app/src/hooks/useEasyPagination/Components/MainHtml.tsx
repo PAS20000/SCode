@@ -44,16 +44,22 @@ export const MainHtml = (
                    </span>
                </span>
                :
-               Pages.map((pg, index) => 
-               <button id={'pages'} key={index} className={CssInject(classStyle, currentPage, pg).PagesCard} onClick={() => ExactPage(pg)}>
-                   {pg}-{DeviceLastPage}
-               </button>)
+               Pages.map((pg, index) =>
+
+                    <button id={'pages'} key={index} className={CssInject(classStyle, currentPage, pg).PagesCard} onClick={() => ExactPage(pg)}>
+                        {pg}
+                    </button>
+               )
            }
            <button id={'Bnext'} name={'buttons'} onClick={() => NextPage()} className={Buttons}>
                <span>
                    {Arrows.right[arrowWeight ?? 100]}
                </span>
            </button>
+           <span>
+                {currentPage}...{DeviceLastPage}
+                {currentPage === DeviceLastPage && '🚀'}
+            </span>
        </div>
    )
 }

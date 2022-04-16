@@ -1,6 +1,6 @@
 .default {
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
 .default:hover {
@@ -8,16 +8,16 @@
     color: cyan;
 }
 .disabled{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
     pointer-events: none;
     color: transparent;
 }
 .select{
     color: cyan;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
     pointer-events: none;
 }
@@ -27,12 +27,12 @@
     background-color:orange;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 .orangeCirclePages{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
 .orangeCirclePages:hover{
@@ -40,8 +40,8 @@
     background-color:gray;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 .orangeCircle:hover{
     transition: 1s;
@@ -53,25 +53,32 @@
     background-color:#6B46C1;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
+
 .purpleCirclePages{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
+
 .purpleCirclePages:hover{
     transition: 1s;
     background-color:gray;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
+
 .purpleCircle:hover{
     transition: 1s;
     background-color: gray;
+}
+
+.purpleCirclePages:focus{
+    background-color: #6B46C1;
 }
 
 .blueCircle {
@@ -79,12 +86,12 @@
     background-color:blue;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 .blueCirclePages{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
 .blueCirclePages:hover{
@@ -92,8 +99,8 @@
     background-color:gray;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 .blueCircle:hover{
     transition: 1s;
@@ -105,8 +112,8 @@
     background-color:red;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 
 .redCircle:hover{
@@ -115,8 +122,8 @@
 }
 
 .redCirclePages{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
 .redCirclePages:hover{
@@ -124,8 +131,8 @@
     background-color:gray;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 
 .greenCircle {
@@ -133,8 +140,8 @@
     background-color:green;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
 
 .greenCircle:hover{
@@ -143,8 +150,8 @@
 }
 
 .greenCirclePages{
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
     margin-left: 5px;
 }
 .greenCirclePages:hover{
@@ -152,6 +159,6 @@
     background-color:gray;
     margin-left: 5px;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:2em;
+    height:2em;
 }
