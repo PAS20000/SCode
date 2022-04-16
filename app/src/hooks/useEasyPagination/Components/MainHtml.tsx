@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { CssInject } from '../functions/CssInject'
 import { IMainFactory, IMainHtmlProps } from '../useEasyPagination.types'
 
@@ -22,7 +23,8 @@ export const MainHtml = (
     DeviceSlice,
 }:IMainFactory) => {
 
-    const {  Buttons, PagesCard } = CssInject(classStyle, currentPage)
+
+    const { Buttons } = CssInject(classStyle, currentPage)
 
     return(
        <div>
@@ -34,7 +36,7 @@ export const MainHtml = (
            </button>
            {!CountPages ?
                <span>
-                   <span className={PagesCard}>
+                   <span className={CssInject(classStyle, currentPage).PagesCard}>
                        {currentPage}
                    </span>
                    <span>
