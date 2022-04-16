@@ -69,9 +69,9 @@ if(CountPageLimit) {
     useMemo(() => {
         
             (function(Device){
-            
+                
                 if(Pages.includes(1)){
-                    setPages(prev => prev.includes(currentPage) ? [...Pages]:[...Pages, currentPage])
+                    setPages(prev => prev.includes(currentPage) ? Pages:[...Pages, currentPage])
                 }
 
             })(Device(DeviceExecuteDependecy));
@@ -103,6 +103,7 @@ if(CountPageLimit) {
         currentPage,
         Pages,
         DeviceData,
+        DeviceLastPage,
         NextPage: () => currentPage === DeviceLastPage ? () => {}:NextPage(),
         ReturnPage:() => currentPage === 1 ? () => {}:ReturnPage(),
         ExactPage:(pg:number) => ExactPage(pg),
