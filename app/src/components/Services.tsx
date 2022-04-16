@@ -34,7 +34,7 @@ export default function Serives() {
             />)}
           </SimpleGrid>
           <Center>
-            {MainHtml}
+            {MainHtml()}
           </Center>
         </Box>
     )

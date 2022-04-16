@@ -9,7 +9,7 @@ import WhoScode from "../src/components/WhoScode"
 
 
 function About(){
-
+   
     return(
         <div>
             <header>

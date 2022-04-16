@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { CssInject } from '../functions/CssInject'
 import { IMainFactory, IMainHtmlProps } from '../useEasyPagination.types'
 import CountPagesTag from './Tags/CountPagesTag'
@@ -29,7 +28,6 @@ export const MainHtml = (
 
     return(
        <div>
-           <button style={{background:'red'}}></button>
            <button id={'Breturn'} name={'b'} onClick={() => ReturnPage()} className={Buttons}>
                <span>
                    {Arrows.left[arrowWeight ?? 100]}
