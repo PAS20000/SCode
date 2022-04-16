@@ -1,6 +1,6 @@
 import { CountPageLimit, IDevice } from "../useEasyPagination.types"
 
-export const existCountSalt = (CountPageLimit:CountPageLimit,{ device, lastPage, Data }:IDevice):number | any => {
+export const existCountSalt = (CountPageLimit:CountPageLimit,{ device, lastPage }:IDevice):number | any => {
 
     if(CountPageLimit){
             if(device === 'cell' && CountPageLimit.cell > lastPage){

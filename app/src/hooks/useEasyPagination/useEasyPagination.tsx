@@ -85,27 +85,9 @@ if(CountPageLimit) {
     useMemo(() => {
 
         (function(Device){
-            const existWidth = width !== 0
-            const device = Device['device']
-            if(device === 'cell' && existWidth ){
 
-                for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device); count++) {
-                    setPages(prev => [...prev,count])
-                }
-            }
-            if(device === 'desktop' && existWidth){
-               
-                for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device); count++) {
-                    setPages(prev => [...prev,count])
-                }
-                
-            } 
-            if(device === 'tv'&& existWidth) {
-
-                for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device); count++) {
-                    setPages(prev => [...prev,count])
-                }
-               
+            for ( let count = 1; count - 1 < existCountSalt(CountPageLimit, Device); count++) {
+                setPages(prev => [...prev,count])
             }
 
         })(DeviceDependecy);
@@ -118,7 +100,6 @@ if(CountPageLimit) {
     const { DeviceData, DeviceLastPage, NextPage, ReturnPage, ExactPage, DeviceName, DeviceSlice } = MainFactory(StateDependency, DeviceDependecy)
 
     return {
-        Result:MainFactory(StateDependency, DeviceDependecy),
         currentPage,
         Pages,
         DeviceData,
