@@ -1,4 +1,4 @@
-import { Box ,Text, useColorModeValue, Heading, Divider, SimpleGrid, Container, Avatar, Flex, Stack, Center } from "@chakra-ui/react";
+import { Box ,Text, useColorModeValue, Heading, Divider, SimpleGrid, Avatar, Flex, Stack, Center } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
 import { comments } from "../../pages/api/social"
 import useEasyPagination from "../hooks/useEasyPagination/useEasyPagination";
