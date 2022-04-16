@@ -6,7 +6,7 @@ import { MainHtml } from './Components/MainHtml'
 import { MainFactory } from './functions/MainFactory'
 
 
-export default function useEasyPagination({
+const useEasyPagination = ({
     data, 
     ShowItemsOnMobile,
     ShowItemsOnDesktop,
@@ -18,7 +18,7 @@ export default function useEasyPagination({
     sm, 
     md,
     lg
-}:IProps) {
+}:IProps) => {
     const [ Start, setStart ] = useState(0)
     const [ currentPage, setCurrentPage ] = useState(1)
     const [ width, setWidth ] = useState(0)
@@ -138,3 +138,6 @@ if(CountPageLimit) {
                 })
     }
 }
+
+
+export default useEasyPagination
