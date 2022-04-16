@@ -19,12 +19,12 @@ export default function GetPosts() {
         data:posts,
         classStyle:'purpleCircle',
         ShowItemsOnMobile:1,
-        ShowItemsOnDesktop:2,
+        ShowItemsOnDesktop:3,
         ShowItemsOnTv:4,
         CountPages:true,
         CountPageLimit:{
             cell:1,
-            desktop:4,
+            desktop:3,
             tv:3
         }
       })
