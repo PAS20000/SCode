@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { CssInject } from '../functions/CssInject'
 import { IMainFactory, IMainHtmlProps } from '../useEasyPagination.types'
-import CountPagesTag from './CountPagesTag'
+import CountPagesTag from './Tags/CountPagesTag'
 
 const Arrows = {
     right:{100:'🡢',200:'🡪', 300:'🡲', 400:'🡺',500:'🢂'},
