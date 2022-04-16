@@ -45,7 +45,7 @@ export default function GetPosts() {
             /> )}
             </SimpleGrid>
             <Center>
-                {MainHtml}
+                <MainHtml />
             </Center>
         </div>
     )

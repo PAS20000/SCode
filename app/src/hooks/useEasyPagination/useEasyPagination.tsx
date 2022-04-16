@@ -120,7 +120,7 @@ if(CountPageLimit) {
         NextPage: () => currentPage === DeviceLastPage ? () => {}:NextPage(),
         ReturnPage:() => currentPage === 1 ? () => {}:ReturnPage(),
         ExactPage:(pg:number) => ExactPage(pg),
-        MainHtml:MainHtml(
+        MainHtml:() => MainHtml(
         {
             CountPages,
             Pages,
