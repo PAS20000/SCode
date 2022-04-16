@@ -65,9 +65,6 @@ export default function useEasyPagination({
         TvWidth:lg
     }
 
-    const DeviceDependecy = Device(DeviceExecuteDependecy)
-    
-
 if(CountPageLimit) {
     useMemo(() => {
         
@@ -77,7 +74,7 @@ if(CountPageLimit) {
                     setPages(prev => prev.includes(currentPage) ? [...Pages]:[...Pages, currentPage])
                 }
 
-            })(DeviceDependecy);
+            })(Device(DeviceExecuteDependecy));
 
     }, [currentPage])
 }
@@ -108,18 +105,15 @@ if(CountPageLimit) {
                
             }
 
-
-        })(DeviceDependecy);
+        })(Device(DeviceExecuteDependecy));
         
     }, [width])
     
-    
-    
 
-    const { DeviceData, DeviceLastPage, NextPage, ReturnPage, ExactPage, DeviceName, DeviceSlice } = MainFactory(StateDependency, DeviceDependecy)
-
+    const { DeviceData, DeviceLastPage, NextPage, ReturnPage, ExactPage, DeviceName, DeviceSlice } = MainFactory(StateDependency, Device(DeviceExecuteDependecy))
+    
     return {
-        Result:MainFactory(StateDependency, DeviceDependecy),
+        Result:MainFactory(StateDependency, Device(DeviceExecuteDependecy)),
         currentPage,
         Pages,
         DeviceData,

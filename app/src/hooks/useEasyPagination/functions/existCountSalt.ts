@@ -1,23 +1,23 @@
 import { CountPageLimit, IDevice } from "../useEasyPagination.types"
 
-export const existCountSalt = (CountPageLimit:CountPageLimit,{ device, lastPage }:IDevice):number | any => {
+export const existCountSalt = (CountPageLimit:CountPageLimit,{ device, lastPage, Data }:IDevice):number | any => {
 
     if(CountPageLimit){
             if(device === 'cell' && CountPageLimit.cell > lastPage){
                 //console.table(Data)
-                throw new Error(
+                console.error(
                     `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.cell}`
                 )
             }
             if(device === 'desktop' && CountPageLimit.desktop > lastPage){
                 //console.table(Data)
-                throw new Error (
+                console.error (
                     `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.desktop}`
                 )
             }
             if(device === 'tv' && CountPageLimit.tv > lastPage){
                 //console.table(Data)
-                throw new Error (
+                console.error (
                     `Count page limit cannot be greater than last page, LastPage: ${lastPage}, CountPageLimit: ${CountPageLimit.tv}`
                 )
             }
@@ -31,7 +31,7 @@ export const existCountSalt = (CountPageLimit:CountPageLimit,{ device, lastPage 
                 return CountPageLimit.tv
             }
 
-            throw new Error ('Unexpected error')
+            console.error ('Unexpected error')
 
         } else {
             return lastPage
