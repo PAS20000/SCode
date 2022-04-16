@@ -1,19 +1,34 @@
-import { Box ,Text, useColorModeValue, Heading, Divider, SimpleGrid, Container, Avatar, Flex, Stack } from "@chakra-ui/react";
+import { Box ,Text, useColorModeValue, Heading, Divider, SimpleGrid, Container, Avatar, Flex, Stack, Center } from "@chakra-ui/react";
 import CustomHeading from "./CustomHeading";
 import { comments } from "../../pages/api/social"
+import useEasyPagination from "../hooks/useEasyPagination/useEasyPagination";
 
 function SocialProof() {
-  
+      const {DeviceData, MainHtml} = useEasyPagination({
+        data:comments,
+        ShowItemsOnDesktop:2,
+        ShowItemsOnMobile:1,
+        ShowItemsOnTv:4,
+        classStyle:'greenCircle',
+        CountPages:true,
+        CountPageLimit:{
+          cell:1,
+          desktop:2,
+          tv:1
+        }
+      })
+      const useColor = useColorModeValue('cyan.500','purple.300')
+      const useBg = useColorModeValue('white', 'gray.800')
     return(
       <div>
         <CustomHeading text={'O que falam sobre nós ?'}/>
-        <SimpleGrid columns={4}>
-        {comments.map(comment =>
+        <SimpleGrid columns={{base:1, md:2, lg:4}}>
+        {DeviceData.map(comment =>
                 <Flex justifyContent='center' mt={4} key={comment.id}>
-                  <Box background={useColorModeValue('white', 'gray.800')} boxShadow={'dark-lg'} width={'90%'}>
+                  <Box background={useBg} boxShadow={'dark-lg'} width={'90%'}>
                     <Stack direction='column'  align={'center'}>
-                      <Avatar src={comment.image} name={comment.name} size={'2xl'} p={'1'} m={'5'} bg={useColorModeValue('cyan.500','purple.300')}/>
-                      <Heading mb={2} fontSize={32} color={useColorModeValue('cyan.500','purple.300')}>
+                      <Avatar src={comment.image} name={comment.name} size={'2xl'} p={'1'} m={'5'} bg={useColor}/>
+                      <Heading mb={2} fontSize={32} color={useColor}>
                          {comment.name}
                       </Heading>
                     </Stack>
@@ -33,6 +48,9 @@ function SocialProof() {
                 </Flex>
           )}
         </SimpleGrid>
+        <Center mt={5}>
+          {MainHtml()}
+        </Center>
       </div>
     )
 }
