@@ -38,20 +38,6 @@ export default function Nav({ about, contact }) {
                         <Text fontWeight={'bold'}>Sobre</Text>
                     </Box>}/>
                 }
-                 {!contact ?  <NextLink href={'/contact'} target={null} text={
-                    <Box mr={2} p={3} border={'1px'}  borderRadius={'md'} 
-                    color={useColorModeValue('cyan.500','purple.300')} borderColor={useColorModeValue('cyan.500','purple.300')} 
-                    _hover={{ transition:'1s', bg:useColorModeValue('cyan.500','purple.300'), color:useColorModeValue('white','black')}} textTransform={'uppercase'} fontSize={{base:'12px', md:'16px'}}>
-                        <Text fontWeight={'bold'}>Contato</Text>
-                    </Box>
-                }/> : 
-                    <NextLink href={'/about'} target={null} text={
-                    <Box mr={2} p={3} border={'1px'}  borderRadius={'md'} 
-                    color={useColorModeValue('white','black')} bg={useColorModeValue('cyan.500','purple.300')}
-                    textTransform={'uppercase'} fontSize={{base:'12px', md:'16px'}}>
-                        <Text fontWeight={'bold'}>Contato</Text>
-                    </Box>}/>
-                }
             </Container>
             <Flex mt={'2'}>
                 {colorMode === 'light' ?
